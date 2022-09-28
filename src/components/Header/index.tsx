@@ -1,14 +1,25 @@
+// eslint-disable-next-line @next/next/no-img-element
 import * as React from 'react';
 import Link from 'next/link';
 
 import { Paths } from '@/helpers/router';
 import styles from './styles.module.scss';
+import { toAbsoluteUrl } from '@/helpers/functions';
 
 export interface IHeaderProps {}
 
 export default function Header(props: IHeaderProps) {
   return (
     <div className={styles.container}>
+      <div className={styles.upper}>
+        <div className={styles.upperLogo}>
+          <img src="/images/logo.png" alt="logo public" />
+        </div>
+      </div>
+      {/* <div className={styles.upper}></div> */}
+
+      <div className={styles.nav}></div>
+
       <Link href={Paths.TrangChu}>
         <a>trang chu</a>
       </Link>
