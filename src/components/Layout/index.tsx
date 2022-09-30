@@ -11,7 +11,9 @@ export default function Layout(props: ILayoutProps) {
   return (
     <div className="layout">
       <Header />
+      <hr />
       <div className="content">{children}</div>
+      <hr />
       <Footer />
     </div>
   );

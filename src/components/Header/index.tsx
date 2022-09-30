@@ -16,7 +16,6 @@ export default function Header(props: IHeaderProps) {
           <img src="/images/logo.png" alt="logo public" />
         </div>
       </div>
-      {/* <div className={styles.upper}></div> */}
 
       <div className={styles.nav}></div>
 
