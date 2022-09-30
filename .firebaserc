@@ -1,0 +1,16 @@
+{
+  "projects": {
+    "default": "ielts-tactics-2"
+  },
+  "targets": {
+    "ielts-tactics-2": {
+      "hosting": [
+        {
+          "target": "client",
+          "public": "dist",
+          "rewrites": "ieltstactics.vn"
+        }
+      ]
+    }
+  }
+}

@@ -12,6 +12,6 @@ export const Paths = {
   TuhocIeltsOnlineVocabulary: '/tu-hoc-ielts-online/vocabulary',
   TuhocIeltsOnlineWriting: '/tu-hoc-ielts-online/writing',
   TinTuc: '/tin-tuc',
-  TinTucChiTiet: (slug?: string): string => `/tin-tuc${slug ? `/${slug}` : ''}`,
+  TinTucChiTiet: 'tin-tuc/',
   TuVan: '/tu-van',
 };
