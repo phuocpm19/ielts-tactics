@@ -7,13 +7,13 @@ import TrangChu from '@/screens/TrangChu';
 
 const HomePage: NextPage = () => {
   return (
-    <div className="container">
+    <>
       <HeadSeo title="Home page" />
 
-      <Layout>
+      <Layout showBanner showLoading>
         <TrangChu />
       </Layout>
-    </div>
+    </>
   );
 };
 

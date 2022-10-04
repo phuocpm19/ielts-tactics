@@ -1,3 +1,59 @@
+@import '@/assets/styles/colors';
+@import '@/assets/styles/mixins';
+@import '@/assets/styles/constants';
+
 .container {
-  border-top: 1px solid #ccc;
+  border-top: 1px solid $color-border;
+  padding: 48px 0 96px 0;
+
+  .headerCommon {
+    margin-bottom: 8px;
+  }
+
+  .info {
+    .logo {
+      margin-bottom: 16px;
+    }
+
+    .about {
+      p {
+        text-align: justify;
+      }
+    }
+  }
+
+  .branch {
+    margin-bottom: 16px;
+  }
+
+  .contact {
+    margin-bottom: 24px;
+  }
+
+  .follow {
+    margin: 16px 0;
+  }
+
+  .register {
+    .input {
+      :global {
+        .ant-input-search .ant-input-group .ant-input-affix-wrapper:not(:last-child) {
+          border-radius: 20px 0 0 20px;
+        }
+
+        .ant-input-search > .ant-input-group > .ant-input-group-addon:last-child .ant-input-search-button {
+          border-radius: 0 20px 20px 0;
+        }
+
+        .ant-btn-primary {
+          background: $color-yellow;
+          border-color: $color-yellow;
+        }
+
+        .ant-btn > span {
+          color: black;
+        }
+      }
+    }
+  }
 }

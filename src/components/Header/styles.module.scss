@@ -1,3 +1,165 @@
+@import '@/assets/styles/colors';
+@import '@/assets/styles/mixins';
+
 .container {
-  border-bottom: 1px solid #ccc;
+  display: initial;
+
+  .visibleDesktops {
+    display: initial;
+
+    @include for-mobiles {
+      display: none;
+    }
+
+    .infoWrapper {
+      background-color: $color-f9;
+    }
+
+    .info {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 0;
+
+      &Left {
+        display: flex;
+        align-items: center;
+
+        &__logo {
+          margin-right: 48px;
+        }
+      }
+
+      &Right {
+        display: flex;
+        align-items: center;
+
+        &__search {
+          input[class='ant-input'] {
+            border-radius: 16px 0 0 16px;
+          }
+
+          :global {
+            .ant-input-search > .ant-input-group > .ant-input-group-addon:last-child .ant-input-search-button {
+              border-radius: 0 16px 16px 0;
+              border-left: none;
+            }
+          }
+
+          button[class=''] {
+            border-radius: 0 16px 16px 0 !important;
+            border-left: none !important;
+          }
+        }
+
+        &__button {
+          display: flex;
+          align-items: center;
+
+          button {
+            margin-left: 8px;
+          }
+        }
+      }
+    }
+
+    .navWrapper {
+      background-color: white;
+      border-bottom: 1px solid $color-e9;
+      position: sticky;
+      top: 0;
+      left: 0;
+      z-index: 9;
+      box-shadow: 0 4px 8px $color-f5;
+    }
+
+    .navList {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .navItem {
+      position: relative;
+
+      &__menu {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &Name {
+          display: inline-block;
+          padding: 16px 0;
+          position: relative;
+
+          &::before {
+            position: absolute;
+            content: '';
+            bottom: 0;
+            left: 0;
+            height: 3px;
+            border-radius: 2px;
+            background-color: black;
+            width: 0%;
+            transition: 0.3s;
+          }
+
+          &:hover {
+            color: $color-yellow;
+
+            &::before {
+              background-color: $color-yellow;
+              width: 100%;
+              transition: 0.3s;
+            }
+          }
+        }
+      }
+
+      &__subMenu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: $color-f9;
+        border-radius: 0 0 4px 4px;
+        border: 1px solid $color-e9;
+        width: 260px;
+        box-shadow: 0 4px 8px $color-f5;
+
+        &Item {
+          &Name {
+            padding: 8px 16px;
+            display: block;
+
+            &:hover {
+              color: $color-yellow;
+              background-color: white;
+            }
+          }
+        }
+      }
+
+      &:hover {
+        .navItem__subMenu {
+          display: block;
+        }
+      }
+
+      &:last-child {
+        .navItem__subMenu {
+          left: unset;
+          right: 0;
+        }
+      }
+    }
+  }
+
+  .visibleMobiles {
+    display: none;
+
+    @include for-mobiles {
+      display: block;
+    }
+  }
 }

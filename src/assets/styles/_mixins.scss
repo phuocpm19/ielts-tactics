@@ -1,0 +1,28 @@
+$xxl: 1400px;
+$xl: 1200px;
+$md: 768px;
+$sm: 600px;
+
+@mixin for-desktops {
+  @media screen and (max-width: $xxl) {
+    @content;
+  }
+}
+
+@mixin for-smaller-desktops {
+  @media screen and (max-width: $xl) {
+    @content;
+  }
+}
+
+@mixin for-tablets {
+  @media screen and (max-width: $md) {
+    @content;
+  }
+}
+
+@mixin for-mobiles {
+  @media screen and (max-width: $sm) {
+    @content;
+  }
+}

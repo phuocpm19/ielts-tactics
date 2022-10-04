@@ -1,0 +1,12 @@
+.container {
+  .list {
+    display: flex;
+    align-items: center;
+  }
+
+  .item {
+    &:not(:last-child) {
+      margin-right: 8px;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@import '@/assets/styles/mixins';
+
+.wrapper {
+  max-width: 1320px;
+  width: 100%;
+  margin: auto;
+
+  @include for-smaller-desktops {
+    max-width: 1140px;
+  }
+
+  @include for-tablets {
+    max-width: calc(100% - 48px);
+  }
+
+  @include for-mobiles {
+    max-width: calc(100% - 32px);
+  }
+}

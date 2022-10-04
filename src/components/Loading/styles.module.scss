@@ -1,0 +1,21 @@
+.Loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 200;
+
+  :global {
+    .ant-spin {
+      color: yellow;
+    }
+    .ant-spin-dot-item {
+      background-color: yellow;
+    }
+  }
+}

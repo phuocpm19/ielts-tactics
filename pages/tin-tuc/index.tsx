@@ -8,13 +8,13 @@ export interface ITinTucPageProps {}
 
 const TinTucPage: NextPage = (props: ITinTucPageProps) => {
   return (
-    <div className="container">
+    <>
       <HeadSeo title="Tin tuc" />
 
-      <Layout>
+      <Layout showLoading={false}>
         <TinTuc />
       </Layout>
-    </div>
+    </>
   );
 };
 
