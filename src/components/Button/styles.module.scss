@@ -1,0 +1,119 @@
+@import '@/assets/styles/colors';
+@import '@/assets/styles/mixins';
+@import '@/assets/styles/constants';
+
+.container {
+  .button {
+    border-radius: 8px;
+    padding: 8px 32px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent;
+    box-shadow: none;
+
+    span {
+      display: inline-block;
+      font-size: 16px;
+      line-height: 24px;
+      color: black;
+      display: inline-block;
+      transition: $medium-animation;
+    }
+  }
+
+  &.variant {
+    &__gray {
+      .button {
+        background-color: $color-e9;
+        border-color: $color-e9;
+
+        &:hover {
+          background-color: $color-c9;
+          border-color: $color-c9;
+        }
+      }
+    }
+
+    &__white {
+      .button {
+        border-color: black;
+
+        &:hover {
+          background-color: $color-e9;
+        }
+      }
+    }
+
+    &__purple {
+      .button {
+        background-color: $color-purple;
+        border-color: $color-purple;
+
+        &:hover {
+          background-color: $color-purple-hover;
+          border-color: $color-purple-hover;
+        }
+
+        span {
+          color: white;
+        }
+      }
+    }
+
+    &__blackWhite,
+    &__blackYellow {
+      .button {
+        background-color: black;
+        border-color: black;
+
+        &:hover {
+          background-color: $color-62;
+          border-color: $color-62;
+        }
+      }
+    }
+
+    &__black {
+      &White {
+        span {
+          color: white;
+        }
+      }
+
+      &Yellow {
+        span {
+          color: $color-yellow;
+        }
+      }
+    }
+
+    &__yellowBlack,
+    &__yellowWhite {
+      .button {
+        background-color: $color-yellow;
+        border-color: $color-yellow;
+
+        &:hover {
+          background-color: yellow;
+          border-color: yellow;
+        }
+      }
+    }
+
+    &__yellow {
+      &White {
+        span {
+          color: white;
+        }
+      }
+
+      &Black {
+        span {
+          color: black;
+        }
+      }
+    }
+  }
+}
