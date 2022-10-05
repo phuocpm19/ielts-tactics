@@ -1,24 +1,25 @@
 import React from 'react';
-import Link from 'next/link';
 
+import useFakeLoading from '@/helpers/hooks/useFakeLoading';
+import Container from '@/components/Container';
+import Loading from '@/components/Loading';
 import { TPostCommon } from '@/common-definition/types';
-import { Paths } from '@/helpers/router';
 
 import styles from './styles.module.scss';
 
 const TinTucChiTiet: React.FC<TPostCommon> = ({ title, desc, createAt, content }) => {
+  const loading = useFakeLoading();
+
   return (
-    <div className={styles.container}>
-      <div>
-        <Link href={Paths.TinTuc}>
-          <a>Back to list</a>
-        </Link>
-      </div>
-      <hr />
-      <h1>{title}</h1>
-      <h3>{desc}</h3>
-      <div>{createAt}</div>
-      {content && <p dangerouslySetInnerHTML={{ __html: content }}></p>}
+    <div className={styles.NewsDetail}>
+      {loading && <Loading />}
+
+      <Container isChild>
+        <h1>{title}</h1>
+        <h3>{desc}</h3>
+        <div>{createAt}</div>
+        {content && <p dangerouslySetInnerHTML={{ __html: content }}></p>}
+      </Container>
     </div>
   );
 };

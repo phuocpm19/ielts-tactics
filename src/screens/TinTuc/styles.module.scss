@@ -1,0 +1,26 @@
+@import '@/assets/styles/colors';
+@import '@/assets/styles/mixins';
+
+.News {
+  &__item {
+    :global {
+      .ant-skeleton.ant-skeleton-element {
+        width: 100%;
+        height: 120px;
+      }
+
+      .ant-skeleton-image {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &-thumb {
+      border-radius: 4px;
+
+      img {
+        border-radius: 4px;
+      }
+    }
+  }
+}

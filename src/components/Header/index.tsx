@@ -32,7 +32,7 @@ export default function Header({ showBanner }: IHeaderProps) {
   };
 
   return (
-    <div className={styles.container}>
+    <div className={styles.Header}>
       <div className={styles.visibleDesktops}>
         {showBanner && (
           <div className={styles.banner}>
