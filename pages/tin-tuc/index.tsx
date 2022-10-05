@@ -11,7 +11,7 @@ const TinTucPage: NextPage = (props: ITinTucPageProps) => {
     <>
       <HeadSeo title="Tin tuc" />
 
-      <Layout showLoading={false}>
+      <Layout>
         <TinTuc />
       </Layout>
     </>

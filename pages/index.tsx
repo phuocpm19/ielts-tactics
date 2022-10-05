@@ -10,7 +10,7 @@ const HomePage: NextPage = () => {
     <>
       <HeadSeo title="Home page" />
 
-      <Layout showBanner showLoading>
+      <Layout showBanner>
         <TrangChu />
       </Layout>
     </>

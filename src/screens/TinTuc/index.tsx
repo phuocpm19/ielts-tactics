@@ -1,59 +1,74 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
-import { onSnapshot, collection, where, query } from 'firebase/firestore';
+import { Col, Row, Skeleton } from 'antd';
 
-import { db } from '@/config/firebase';
-
-import styles from './styles.module.scss';
+import useFakeLoading from '@/helpers/hooks/useFakeLoading';
+import useFetchDataFirebase from '@/helpers/hooks/useFetchDataFirebase';
 import { Paths } from '@/helpers/router';
 import Container from '@/components/Container';
-import Loading from '@/components/Loading';
+
+import styles from './styles.module.scss';
 
 export interface ITinTucProps {}
 
 const TinTuc: React.FC = (props: ITinTucProps) => {
-  const [loading, setLoading] = useState<boolean>(true);
-  const [news, setNews] = useState<any>([]);
+  const loading = useFakeLoading();
+  const news = useFetchDataFirebase();
   const showNews = news && news.length > 0;
 
-  const getDataFromFirebase = () => {
-    const collectionRef = collection(db, 'posts');
-    const q = query(collectionRef, where('category', '==', 'Tin Tức'));
-
-    const unsubscribe = onSnapshot(q, (querySnapshot) => {
-      const newData = querySnapshot.docs.map((doc) => ({
-        ...doc.data(),
-        id: doc.id,
-        timestamp: doc.data().timestamp?.toDate().getTime(),
-      }));
-
-      setNews(newData);
-    });
-
-    return unsubscribe;
-  };
-
-  useEffect(() => {
-    getDataFromFirebase();
-  }, []);
-
   return (
-    <div className={`${styles.container} padding-common`}>
+    <div className={`${styles.News} padding-common`}>
       <Container isChild>
-        <div className={styles.news}>
+        <div className={styles.News__list}>
           {showNews &&
-            news.map((item: any) => (
-              <div className={styles.newsItem} key={item.id}>
-                <div className={styles.newsItem__title}>{item.title}</div>
-                <div className={styles.newsItem__desc}>{item.desc}</div>
-                <div className={styles.newsItem__link}>
-                  <Link href={`${Paths.TinTucChiTiet}${item.slug}`}>
-                    <a>show detail</a>
-                  </Link>
+            news.map((item: any) => {
+              const itemHref = `${Paths.TinTucChiTiet}${item.slug}`;
+
+              return (
+                <div className={styles.News__item} key={item.id}>
+                  <Row gutter={16}>
+                    <Col lg={8} xs={24}>
+                      <div className={styles['News__item-thumb']}>
+                        {loading ? (
+                          <Skeleton.Image />
+                        ) : (
+                          <Link href={itemHref}>
+                            <a className="image-common">
+                              <img src={item.thumbnail || '/images/thumbnail-default.jpeg'} alt="thumbnail" />
+                            </a>
+                          </Link>
+                        )}
+                      </div>
+                    </Col>
+
+                    <Col lg={16} xs={24}>
+                      <Skeleton loading={loading}>
+                        <div className={styles['News__item-info']}>
+                          <div className={styles['News__item-info-title']}>
+                            <Link href={itemHref}>
+                              <a>{item.title}</a>
+                            </Link>
+                          </div>
+
+                          <div className={styles['News__item-info-desc']}>
+                            <Link href={itemHref}>
+                              <a>{item.desc}</a>
+                            </Link>
+                          </div>
+
+                          <div className={styles['News__item-info-link']}>
+                            <Link href={itemHref}>
+                              <a>Xem chi tiết</a>
+                            </Link>
+                          </div>
+                        </div>
+                      </Skeleton>
+                    </Col>
+                  </Row>
+                  <hr />
                 </div>
-                <hr />
-              </div>
-            ))}
+              );
+            })}
         </div>
       </Container>
     </div>
