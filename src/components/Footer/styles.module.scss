@@ -2,9 +2,10 @@
 @import '@/assets/styles/mixins';
 @import '@/assets/styles/constants';
 
-.container {
+.Footer {
   border-top: 1px solid $color-border;
   padding: 48px 0 96px 0;
+  background-color: $color-f9;
 
   .headerCommon {
     margin-bottom: 8px;

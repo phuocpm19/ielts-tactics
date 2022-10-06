@@ -17,7 +17,7 @@ const TinTuc: React.FC = (props: ITinTucProps) => {
   const showNews = news && news.length > 0;
 
   return (
-    <div className={`${styles.News} padding-common`}>
+    <div className={`${styles.News || 'News'} padding-common`}>
       <Container isChild>
         <div className={styles.News__list}>
           {showNews &&
@@ -65,7 +65,6 @@ const TinTuc: React.FC = (props: ITinTucProps) => {
                       </Skeleton>
                     </Col>
                   </Row>
-                  <hr />
                 </div>
               );
             })}
