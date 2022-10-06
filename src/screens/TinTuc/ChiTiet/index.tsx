@@ -11,7 +11,7 @@ const TinTucChiTiet: React.FC<TPostCommon> = ({ title, desc, createAt, content }
   const loading = useFakeLoading();
 
   return (
-    <div className={styles.NewsDetail}>
+    <div className={`${styles.NewsDetail || 'NewsDetail'} padding-common`}>
       {loading && <Loading />}
 
       <Container isChild>

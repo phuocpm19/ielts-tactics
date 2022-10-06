@@ -1,4 +1,4 @@
-import Document, { Head, Html } from 'next/document';
+import Document, { Html, Head, Main, NextScript } from 'next/document';
 
 class MyDocument extends Document {
   render() {
@@ -97,27 +97,30 @@ class MyDocument extends Document {
             }}
           />
 
-          <noscript
-            dangerouslySetInnerHTML={{
-              __html: `<img
+          <noscript>
+            <img
+              src="https://www.facebook.com/tr?id=517405106543108&ev=PageView&noscript=1"
               height="1"
               width="1"
-              style="display:none"
-              src="https://www.facebook.com/tr?id=517405106543108&ev=PageView&noscript=1"
-            />`,
-            }}
-          />
+              style={{ display: 'none' }}
+            />
+          </noscript>
           {/* End Meta Pixel Code  */}
         </Head>
 
         <body id="ielts_tactics">
-          <noscript
-            dangerouslySetInnerHTML={{
-              __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K2FX2WK" height="0" width="0"
-      style="display:none;visibility:hidden"></iframe>`,
-            }}
-          />
+          <noscript>
+            <iframe
+              src="https://www.googletagmanager.com/ns.html?id=GTM-K2FX2WK"
+              height="0"
+              width="0"
+              style={{ display: 'none', visibility: 'hidden' }}
+            />
+          </noscript>
         </body>
+
+        <Main />
+        <NextScript />
       </Html>
     );
   }
