@@ -4,21 +4,17 @@ import useFakeLoading from '@/helpers/hooks/useFakeLoading';
 import Container from '@/components/Container';
 import Loading from '@/components/Loading';
 import { TPostCommon } from '@/common-definition/types';
+import Article from '@/components/Article';
 
-import styles from './styles.module.scss';
-
-const TinTucChiTiet: React.FC<TPostCommon> = ({ title, desc, createAt, content }) => {
+const TinTucChiTiet: React.FC<TPostCommon> = ({ id, title, desc, createAt, content }) => {
   const loading = useFakeLoading();
 
   return (
-    <div className={`${styles.NewsDetail || 'NewsDetail'} padding-common`}>
+    <div className="padding-common">
       {loading && <Loading />}
 
       <Container isChild>
-        <h1>{title}</h1>
-        <h3>{desc}</h3>
-        <div>{createAt}</div>
-        {content && <p dangerouslySetInnerHTML={{ __html: content }}></p>}
+        <Article id={id} title={title} desc={desc} createAt={createAt} content={content} />
       </Container>
     </div>
   );

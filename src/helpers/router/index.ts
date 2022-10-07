@@ -3,7 +3,7 @@ export const Paths = {
   BannerTop: '/',
 
   GioiThieu: '/gioi-thieu',
-  GioiThieuVeIeltsTactics: '/gioi-thieu/ve-ielts-tactics',
+  GioiThieuVeIeltsTactics: '/tin-tuc/trung-tam-luyen-thi-ielts-uy-tín-tai-viet-nam-ielts-tactics',
   GioiThieuChinhSach: '/gioi-thieu/chinh-sach-va-quyen-rieng-tu',
 
   LichKhaiGiang: '/lich-khai-giang',
