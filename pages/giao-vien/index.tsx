@@ -4,12 +4,10 @@ import HeadSeo from '@/components/HeadSeo';
 import Layout from '@/components/Layout';
 import GiaoVien from '@/screens/GiaoVien';
 
-interface IGiaoVienPageProps {}
-
-export const GiaoVienPage: NextPage = (props: IGiaoVienPageProps) => {
+export const GiaoVienPage: NextPage = () => {
   return (
     <>
-      <HeadSeo title="Giao vien" />
+      <HeadSeo title="Giao vien list" />
 
       <Layout>
         <GiaoVien />

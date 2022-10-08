@@ -7,7 +7,7 @@ import { TSvgProps } from '../types';
 const IconSearch: React.FC<TSvgProps> = ({ color = EColor.PRIMARY }) => {
   return (
     <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <g clip-path="url(#clip0_244_500)">
+      <g clipPath="url(#clip0_244_500)">
         <path
           d="M8.75 18.4961C3.925 18.4961 0 14.5711 0 9.74609C0 4.92109 3.925 0.996094 8.75 0.996094C13.575 0.996094 17.5 4.92109 17.5 9.74609C17.5 14.5711 13.575 18.4961 8.75 18.4961ZM8.75 3.49609C5.30375 3.49609 2.5 6.29984 2.5 9.74609C2.5 13.1923 5.30375 15.9961 8.75 15.9961C12.1962 15.9961 15 13.1923 15 9.74609C15 6.29984 12.1962 3.49609 8.75 3.49609Z"
           fill={color}

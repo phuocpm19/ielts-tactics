@@ -194,7 +194,7 @@ export default function Header({ showBanner }: IHeaderProps) {
         {showBanner && (
           <div className={styles.banner}>
             <Link href={Paths.BannerTop}>
-              <a>
+              <a className="image-common">
                 <img src="/images/banner.jpg" alt="banner" />
               </a>
             </Link>
@@ -290,24 +290,30 @@ export default function Header({ showBanner }: IHeaderProps) {
 
           <div className={styles.logo}>
             <Link href={Paths.TrangChu}>
-              <a>
+              <a className="image-common">
                 <img src="/images/logo.png" alt="logo" />
               </a>
             </Link>
           </div>
+
+          <div className={styles.empty}>&nbsp;</div>
         </div>
 
-        <div className={styles.menuMobile}>
-          <Drawer
-            className="MenuMobile"
-            title={<>IELTS TACTICS</>}
-            placement="left"
-            onClose={hiddenMenuMobiles}
-            open={menuMobileVisible}
-          >
-            <Menu mode="inline" openKeys={openKeys} onOpenChange={onOpenChange} items={items} />
-          </Drawer>
-        </div>
+        <Drawer
+          className={styles.MenuMobile}
+          title={
+            <Link href={Paths.TrangChu}>
+              <a className="image-common">
+                <img src="/images/logo.png" alt="logo" />
+              </a>
+            </Link>
+          }
+          placement="left"
+          onClose={hiddenMenuMobiles}
+          open={menuMobileVisible}
+        >
+          <Menu mode="inline" openKeys={openKeys} onOpenChange={onOpenChange} items={items} />
+        </Drawer>
       </div>
     </div>
   );

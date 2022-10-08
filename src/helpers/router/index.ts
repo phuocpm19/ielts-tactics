@@ -25,7 +25,6 @@ export const Paths = {
   TuhocIeltsOnlineWriting: '/tu-hoc-ielts-online/writing',
 
   TinTuc: '/tin-tuc',
-  TinTucChiTiet: 'tin-tuc/',
 
   TuVan: '/tu-van',
 };

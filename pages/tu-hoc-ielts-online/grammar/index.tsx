@@ -7,7 +7,7 @@ import TuHocIeltsGrammar from '@/screens/TuHocIeltsOnline/Grammar';
 const TuHocIeltsGrammarPage: NextPage = () => {
   return (
     <>
-      <HeadSeo title="Grammar" />
+      <HeadSeo title="Grammar list" />
 
       <Layout>
         <TuHocIeltsGrammar />

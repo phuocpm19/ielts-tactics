@@ -2,17 +2,20 @@ import React from 'react';
 import { Col, Row, Skeleton } from 'antd';
 import Link from 'next/link';
 
+import useFakeLoading from '@/helpers/hooks/useFakeLoading';
+
 import styles from './styles.module.scss';
 
 export interface IPostItemProps {
-  loading: boolean;
   hrefPost: string;
   srcThumbnail?: string;
   title: string;
   desc: string;
 }
 
-export default function PostItem({ loading, hrefPost, srcThumbnail, title, desc }: IPostItemProps) {
+export default function PostItem({ hrefPost, srcThumbnail, title, desc }: IPostItemProps) {
+  const loading = useFakeLoading(500);
+
   return (
     <div className={styles.PostItem}>
       <Row gutter={16}>

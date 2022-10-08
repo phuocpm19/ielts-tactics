@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
-const useFakeLoading = () => {
+const useFakeLoading = (second: number) => {
   const [loading, setLoading] = useState<any>(true);
 
   if (loading) {
     setTimeout(() => {
       setLoading(false);
-    }, 500);
+    }, second);
   }
 
   return loading;

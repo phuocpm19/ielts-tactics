@@ -1,25 +1,18 @@
 import { NextPage } from 'next';
 
 import { getPostBySlug } from '@/config/firebase';
-import { TPostCommon } from '@/common-definition/types';
 import HeadSeo from '@/components/HeadSeo';
 import Layout from '@/components/Layout';
-import TuHocIeltsGrammarChiTiet from '@/screens/TuHocIeltsOnline/Grammar/ChiTiet';
+import { TArticle } from '@/components/Article/types';
+import PageDetail from '@/containers/PageDetail';
 
-const TuHocIeltsGrammarChiTietPage: NextPage<TPostCommon> = ({ id, title, desc, createAt, content, thumbnail }) => {
+const TuHocIeltsGrammarChiTietPage: NextPage<TArticle> = ({ id, title, desc, createAt, content, thumbnail }) => {
   return (
     <>
-      <HeadSeo title="Chi tiet grammar" />
+      <HeadSeo title="Grammar chi tiet" />
 
       <Layout>
-        <TuHocIeltsGrammarChiTiet
-          id={id}
-          title={title}
-          desc={desc}
-          createAt={createAt}
-          content={content}
-          thumbnail={thumbnail}
-        />
+        <PageDetail id={id} title={title} desc={desc} createAt={createAt} content={content} thumbnail={thumbnail} />
       </Layout>
     </>
   );

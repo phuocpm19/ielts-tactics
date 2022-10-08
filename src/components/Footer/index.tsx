@@ -17,11 +17,11 @@ export default function Footer(props: IFooterProps) {
     <div className={styles.Footer}>
       <Container>
         <Row gutter={24}>
-          <Col span={8}>
+          <Col xl={8} xs={24}>
             <div className={styles.info}>
               <div className={styles.logo}>
                 <Link href={Paths.TrangChu}>
-                  <a>
+                  <a className="image-common">
                     <img src="/images/logo.png" alt="logo" />
                   </a>
                 </Link>
@@ -44,7 +44,7 @@ export default function Footer(props: IFooterProps) {
             </div>
           </Col>
 
-          <Col span={8}>
+          <Col xl={8} md={12} xs={24}>
             <div className={styles.branch}>
               <div className={styles.headerCommon}>
                 <strong>Hệ thống cơ sở:</strong>
@@ -82,7 +82,7 @@ export default function Footer(props: IFooterProps) {
             </div>
           </Col>
 
-          <Col span={8}>
+          <Col xl={8} md={12} xs={24}>
             <div className={styles.contact}>
               <div className={styles.headerCommon}>
                 <strong>Contact us:</strong>

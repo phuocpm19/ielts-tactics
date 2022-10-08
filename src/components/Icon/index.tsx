@@ -16,6 +16,8 @@ import IconSocialYoutube from './social-youtube';
 import IconMailYellow from './mail-large';
 import IconClock from './clock';
 import IconUp from './up';
+import IconDocumentYellow from './document-yellow';
+import IconCheckRed from './check-red';
 
 const Icon: React.FC<TIconProps> = ({ name, color }) => {
   const renderIcon = (): React.ReactElement => {
@@ -44,6 +46,10 @@ const Icon: React.FC<TIconProps> = ({ name, color }) => {
         return <IconClock color={color} />;
       case EIconName.ICON_UP:
         return <IconUp color={color} />;
+      case EIconName.ICON_DOCUMENT_YELLOW:
+        return <IconDocumentYellow color={color} />;
+      case EIconName.ICON_CHECK_RED:
+        return <IconCheckRed color={color} />;
 
       default:
         return <></>;

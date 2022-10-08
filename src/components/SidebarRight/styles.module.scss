@@ -1,15 +1,19 @@
 @import '@/assets/styles/common';
 
 .SidebarRight {
-  &__container {
-    :global {
-      .ant-collapse > .ant-collapse-item > .ant-collapse-header {
-        background-color: $color-yellow;
-      }
+  display: none;
 
-      .ant-collapse > .ant-collapse-item > .ant-collapse-header .ant-collapse-header-text {
-        font-weight: 600;
-      }
+  @include for-desktops-lg {
+    display: block;
+  }
+
+  :global {
+    .ant-collapse > .ant-collapse-item > .ant-collapse-header {
+      background-color: $color-yellow;
+    }
+
+    .ant-collapse > .ant-collapse-item > .ant-collapse-header .ant-collapse-header-text {
+      font-weight: 600;
     }
   }
 

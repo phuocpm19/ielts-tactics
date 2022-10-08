@@ -1,13 +1,13 @@
-import React from 'react';
+import * as React from 'react';
 
 import useFakeLoading from '@/helpers/hooks/useFakeLoading';
-import Container from '@/components/Container';
+import { TArticle } from '@/components/Article/types';
 import Loading from '@/components/Loading';
-import { TPostCommon } from '@/common-definition/types';
+import Container from '@/components/Container';
 import Article from '@/components/Article';
 
-const GiaoVienChiTiet: React.FC<TPostCommon> = ({ id, title, desc, createAt, content, thumbnail }) => {
-  const loading = useFakeLoading();
+export default function PageDetail({ id, title, desc, createAt, content, thumbnail }: TArticle) {
+  const loading = useFakeLoading(1500);
 
   return (
     <div className="padding-common">
@@ -18,6 +18,4 @@ const GiaoVienChiTiet: React.FC<TPostCommon> = ({ id, title, desc, createAt, con
       </Container>
     </div>
   );
-};
-
-export default GiaoVienChiTiet;
+}

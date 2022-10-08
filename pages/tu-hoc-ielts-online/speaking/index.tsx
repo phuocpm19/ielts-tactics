@@ -7,7 +7,7 @@ import TuHocIeltsSpeaking from '@/screens/TuHocIeltsOnline/Speaking';
 const TuHocIeltsSpeakingPage: NextPage = () => {
   return (
     <>
-      <HeadSeo title="Speaking" />
+      <HeadSeo title="Speaking list" />
 
       <Layout>
         <TuHocIeltsSpeaking />
