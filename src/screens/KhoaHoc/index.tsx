@@ -11,7 +11,7 @@ export interface IKhoaHocProps {}
 
 export default function KhoaHoc(props: IKhoaHocProps) {
   const loading = useFakeLoading();
-  const categoryName = CATEGORY_NAME.LICH_KHAI_GIANG;
+  const categoryName = CATEGORY_NAME.KHOA_HOC;
   const postList = useFetchDataFirebase(categoryName);
   const showPostList = postList && postList.length > 0;
 

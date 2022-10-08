@@ -1,0 +1,21 @@
+@import '@/assets/styles/common';
+
+.backTop {
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  border-radius: 4px;
+  background-color: $color-yellow;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  background-color: $color-yellow;
+
+  svg path {
+    fill: white;
+  }
+}

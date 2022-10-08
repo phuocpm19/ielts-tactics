@@ -4,7 +4,8 @@ export const Paths = {
 
   GioiThieu: '/gioi-thieu',
   GioiThieuVeIeltsTactics: '/tin-tuc/trung-tam-luyen-thi-ielts-uy-tín-tai-viet-nam-ielts-tactics',
-  GioiThieuChinhSach: '/gioi-thieu/chinh-sach-va-quyen-rieng-tu',
+  GiaoVien: '/giao-vien',
+  GioiThieuChinhSach: '/gioi-thieu/chinh-sach-quyen-rieng-tu-ielts-tactics',
 
   LichKhaiGiang: '/lich-khai-giang',
 
@@ -27,6 +28,4 @@ export const Paths = {
   TinTucChiTiet: 'tin-tuc/',
 
   TuVan: '/tu-van',
-
-  GiaoVien: 'giao-vien',
 };

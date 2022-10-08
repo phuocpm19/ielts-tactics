@@ -9,16 +9,14 @@ import Container from '@/components/Container';
 import PostItem from '@/components/PostItem';
 import { Paths } from '@/helpers/router';
 
-export interface IGioiThieuProps {}
-
-export default function GioiThieu(props: IGioiThieuProps) {
+export default function GioiThieu() {
   const loading = useFakeLoading();
   const categoryName = CATEGORY_NAME.GIOI_THIEU;
   const postList = useFetchDataFirebase(categoryName);
   const showPostList = postList && postList.length > 0;
 
   return (
-    <div className={`${styles.GioiThieu || 'GioiThieu'} padding-common`}>
+    <div className="GioiThieu padding-common">
       <Container isChild>
         <div className="Post__list">
           {showPostList &&

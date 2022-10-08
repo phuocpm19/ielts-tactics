@@ -7,9 +7,7 @@ import { Paths } from '@/helpers/router';
 import Container from '@/components/Container';
 import PostItem from '@/components/PostItem';
 
-export interface ILichKhaiGiangProps {}
-
-export default function LichKhaiGiang(props: ILichKhaiGiangProps) {
+export default function LichKhaiGiang() {
   const loading = useFakeLoading();
   const categoryName = CATEGORY_NAME.LICH_KHAI_GIANG;
   const postList = useFetchDataFirebase(categoryName);

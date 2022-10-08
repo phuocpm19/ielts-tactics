@@ -11,8 +11,9 @@ export interface IGiaoVienProps {}
 
 export default function GiaoVien(props: IGiaoVienProps) {
   const loading = useFakeLoading();
-  const categoryName = CATEGORY_NAME.LICH_KHAI_GIANG;
-  const postList = useFetchDataFirebase(categoryName);
+  const categoryName = CATEGORY_NAME.GIAO_VIEN;
+  const isSingleCategory = true;
+  const postList = useFetchDataFirebase(categoryName, isSingleCategory);
   const showPostList = postList && postList.length > 0;
 
   return (

@@ -6,7 +6,7 @@ const useFakeLoading = () => {
   if (loading) {
     setTimeout(() => {
       setLoading(false);
-    }, 1500);
+    }, 500);
   }
 
   return loading;

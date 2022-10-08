@@ -6,15 +6,15 @@ import HeadSeo from '@/components/HeadSeo';
 import Layout from '@/components/Layout';
 import TinTucChiTiet from '@/screens/TinTuc/ChiTiet';
 
-const TinTucChiTietPage: NextPage<TPostCommon> = ({ id, title, desc, createAt, content }) => {
+const TinTucChiTietPage: NextPage<TPostCommon> = ({ id, title, desc, createAt, content, thumbnail }) => {
   return (
-    <div className="container">
+    <>
       <HeadSeo title="Chi tiet Tin tuc" />
 
       <Layout>
-        <TinTucChiTiet id={id} title={title} desc={desc} createAt={createAt} content={content} />
+        <TinTucChiTiet id={id} title={title} desc={desc} createAt={createAt} content={content} thumbnail={thumbnail} />
       </Layout>
-    </div>
+    </>
   );
 };
 
@@ -29,6 +29,7 @@ export async function getServerSideProps(context: any) {
       desc: post ? post.desc : null,
       createAt: post ? post.createAt : null,
       content: post ? post.content : null,
+      thumbnail: post ? post.thumbnail : null,
     },
   };
 }

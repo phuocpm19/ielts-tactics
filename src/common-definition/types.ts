@@ -4,4 +4,5 @@ export type TPostCommon = {
   desc: string | null;
   createAt: string | null;
   content: string | null;
+  thumbnail: string | null;
 };

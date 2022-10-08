@@ -14,6 +14,8 @@ import IconSocialInstagram from './social-instagram';
 import IconSocialTiktok from './social-tiktok';
 import IconSocialYoutube from './social-youtube';
 import IconMailYellow from './mail-large';
+import IconClock from './clock';
+import IconUp from './up';
 
 const Icon: React.FC<TIconProps> = ({ name, color }) => {
   const renderIcon = (): React.ReactElement => {
@@ -38,6 +40,10 @@ const Icon: React.FC<TIconProps> = ({ name, color }) => {
         return <IconSocialYoutube color={color} />;
       case EIconName.ICON_MAIL_LARGER:
         return <IconMailYellow color={color} />;
+      case EIconName.ICON_CLOCK:
+        return <IconClock color={color} />;
+      case EIconName.ICON_UP:
+        return <IconUp color={color} />;
 
       default:
         return <></>;

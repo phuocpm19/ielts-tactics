@@ -7,20 +7,18 @@ import { CATEGORY_NAME } from '@/helpers/constants';
 import Container from '@/components/Container';
 import PostItem from '@/components/PostItem';
 
-export interface ITinTucProps {}
-
-const TinTuc: React.FC = (props: ITinTucProps) => {
+const TinTuc: React.FC = () => {
   const loading = useFakeLoading();
   const categoryName = CATEGORY_NAME.TIN_TUC;
-  const news = useFetchDataFirebase(categoryName);
-  const showNews = news && news.length > 0;
+  const postList = useFetchDataFirebase(categoryName);
+  const showPostList = postList && postList.length > 0;
 
   return (
     <div className="TinTuc padding-common">
       <Container isChild>
         <div className="Post__list">
-          {showNews &&
-            news.map((item: any) => (
+          {showPostList &&
+            postList.map((item: any) => (
               <div className="Post__item" key={item.id}>
                 <PostItem
                   loading={loading}
