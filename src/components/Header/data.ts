@@ -21,7 +21,7 @@ export const MENU = {
   },
   GiaoVien: {
     id: 'menu22',
-    href: Paths.GioiThieu,
+    href: Paths.GiaoVien,
     name: 'Giáo viên',
     isInternal: true,
   },

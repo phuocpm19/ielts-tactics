@@ -4,9 +4,7 @@ import HeadSeo from '@/components/HeadSeo';
 import Layout from '@/components/Layout';
 import TinTuc from '@/screens/TinTuc';
 
-export interface ITinTucPageProps {}
-
-const TinTucPage: NextPage = (props: ITinTucPageProps) => {
+const TinTucPage: NextPage = () => {
   return (
     <>
       <HeadSeo title="Tin tuc" />
