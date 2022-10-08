@@ -14,7 +14,7 @@ const { Panel } = Collapse;
 
 export default function SidebarRight(props: ISidebarRightProps) {
   return (
-    <div className={styles.SidebarRight__container}>
+    <div className={styles.SidebarRight}>
       <div className={styles.SidebarRight__collapse}>
         <Collapse defaultActiveKey={['1']}>
           <Panel header="Lộ trình Khóa học IELTS" key="1">

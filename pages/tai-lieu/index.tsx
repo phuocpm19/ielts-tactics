@@ -1,21 +1,18 @@
-import * as React from 'react';
 import { NextPage } from 'next';
 
 import HeadSeo from '@/components/HeadSeo';
 import Layout from '@/components/Layout';
 import TaiLieu from '@/screens/TaiLieu';
 
-export interface ITaiLieuPageProps {}
-
-const TaiLieuPage: NextPage = (props: ITaiLieuPageProps) => {
+const TaiLieuPage: NextPage = () => {
   return (
-    <div className="container">
-      <HeadSeo title="Tai lieu" />
+    <>
+      <HeadSeo title="Tai lieu list" />
 
       <Layout>
         <TaiLieu />
       </Layout>
-    </div>
+    </>
   );
 };
 

@@ -7,7 +7,7 @@ import TuHocIeltsWriting from '@/screens/TuHocIeltsOnline/Writing';
 const TuHocIeltsWritingPage: NextPage = () => {
   return (
     <>
-      <HeadSeo title="Writing" />
+      <HeadSeo title="Writing list" />
 
       <Layout>
         <TuHocIeltsWriting />

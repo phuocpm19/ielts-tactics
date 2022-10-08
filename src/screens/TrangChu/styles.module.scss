@@ -1,1 +1,208 @@
 @import '@/assets/styles/common';
+
+.TrangChu {
+  background-color: #f5f5f5;
+
+  .Banner {
+    background-image: url('/images/banner-top-mb.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @include for-desktops-lg {
+      background-image: url('/images/banner-top.png');
+    }
+
+    &__wrapper {
+      position: relative;
+      padding: 40px 0;
+
+      @include for-desktops-lg {
+        padding: 190px 0;
+      }
+    }
+
+    &__info {
+      width: 100%;
+
+      @include for-desktops-lg {
+        width: 50%;
+      }
+
+      &-title {
+        font-size: 24px;
+        line-height: 1.4;
+        color: #5124e4;
+        margin-bottom: 16px;
+        text-transform: uppercase;
+
+        @include for-desktops-lg {
+          font-size: 48px;
+        }
+
+        span {
+          background-color: #000000;
+          color: #ffffff;
+          display: inline-block;
+          padding: 8px 16px;
+          margin-top: 8px;
+          font-weight: 600;
+        }
+
+        strong {
+          font-weight: 600;
+          color: #5124e4;
+        }
+      }
+
+      &-desc {
+        font-size: 20px;
+        line-height: 26px;
+        color: $color-05;
+        margin-bottom: 16px;
+        text-align: justify;
+      }
+
+      &-button {
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  .TaiSao {
+    background-image: url('/images/chung-chi.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 40px 0;
+
+    @include for-desktops-lg {
+      padding: 144px 0;
+    }
+
+    &__header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    &__heading {
+      font-size: 32px;
+      line-height: 40px;
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+
+    &__subHeading {
+      font-size: 20px;
+      line-height: 28px;
+    }
+
+    &__item {
+      margin-bottom: 16px;
+
+      @include for-desktops-lg {
+        margin-bottom: 0;
+      }
+
+      &-thumb {
+        img {
+          width: 100%;
+          border-radius: 16px 16px 0 0;
+          object-fit: cover;
+          height: 184px;
+
+          @include for-desktops-lg {
+            height: 137px;
+          }
+        }
+      }
+      &-info {
+        background-color: #ffffff;
+        padding: 16px;
+        border-radius: 0 0 16px 16px;
+
+        &-title {
+          font-size: 18px;
+          font-weight: 600;
+          margin-bottom: 8px;
+        }
+
+        &-desc {
+          height: auto;
+
+          @include for-tablets-sm {
+            height: 100px;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            -webkit-line-clamp: 3;
+          }
+        }
+      }
+    }
+  }
+
+  .ThiThu {
+    display: flex;
+    padding: 36px 0;
+    flex-direction: column;
+    align-items: center;
+
+    @include for-tablets {
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    &__wrapper {
+      background-color: #f9fafd;
+    }
+
+    &__left {
+      display: flex;
+      align-items: center;
+      margin-bottom: 16px;
+      margin-right: 0;
+
+      @include for-tablets {
+        margin-bottom: 0;
+        margin-right: 40px;
+      }
+
+      // @media screen and (max-width: 600px) {
+      //   margin-right: 0;
+      //   margin-bottom: 16px;
+      // }
+      &-icon {
+        width: 52px;
+        margin-right: 16px;
+      }
+
+      &-info {
+        &-title {
+          font-weight: 600;
+          margin-bottom: 8px;
+          color: $color-yellow;
+        }
+
+        &-item {
+          display: flex;
+          align-items: center;
+
+          &-icon {
+            width: 14px;
+          }
+
+          p {
+            color: $color-75;
+            margin-left: 8px;
+            margin-bottom: 0;
+          }
+
+          &:not(:last-child) {
+            margin-bottom: 8px;
+          }
+        }
+      }
+    }
+  }
+}

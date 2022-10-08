@@ -1,25 +1,18 @@
 import { NextPage } from 'next';
 
 import { getPostBySlug } from '@/config/firebase';
-import { TPostCommon } from '@/common-definition/types';
 import HeadSeo from '@/components/HeadSeo';
 import Layout from '@/components/Layout';
-import GiaoVienChiTiet from '@/screens/GiaoVien/ChiTiet';
+import { TArticle } from '@/components/Article/types';
+import PageDetail from '@/containers/PageDetail';
 
-const GiaoVienChiTietPage: NextPage<TPostCommon> = ({ id, title, desc, createAt, content, thumbnail }) => {
+const GiaoVienChiTietPage: NextPage<TArticle> = ({ id, title, desc, createAt, content, thumbnail }) => {
   return (
     <>
-      <HeadSeo title="Chi tiet giao vien" />
+      <HeadSeo title="Giao vien chi tiet" />
 
       <Layout>
-        <GiaoVienChiTiet
-          id={id}
-          title={title}
-          desc={desc}
-          createAt={createAt}
-          content={content}
-          thumbnail={thumbnail}
-        />
+        <PageDetail id={id} title={title} desc={desc} createAt={createAt} content={content} thumbnail={thumbnail} />
       </Layout>
     </>
   );

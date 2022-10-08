@@ -7,7 +7,7 @@ import KhoaHoc from '@/screens/KhoaHoc';
 const KhoaHocPage: NextPage = () => {
   return (
     <>
-      <HeadSeo title="Khoa hoc" />
+      <HeadSeo title="Khoa hoc list" />
 
       <Layout>
         <KhoaHoc />

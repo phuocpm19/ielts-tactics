@@ -1,4 +1,4 @@
-export type TPostCommon = {
+export type TArticle = {
   id: number | string | null;
   title: string | null;
   desc: string | null;

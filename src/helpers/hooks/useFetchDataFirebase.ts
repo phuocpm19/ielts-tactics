@@ -4,7 +4,7 @@ import { collection, onSnapshot, query, where } from 'firebase/firestore';
 import { db } from '@/config/firebase';
 
 const useFetchDataFirebase = (categoryName: string, isSingleCategory?: boolean) => {
-  const [news, setNews] = useState<any>([]);
+  const [postList, setPostList] = useState<any>([] || false);
 
   const fetchData = () => {
     const collectionRef = collection(db, 'posts');
@@ -13,13 +13,15 @@ const useFetchDataFirebase = (categoryName: string, isSingleCategory?: boolean) 
       : query(collectionRef, where('category', '==', categoryName));
 
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
-      const newData = querySnapshot.docs.map((doc) => ({
+      const result = querySnapshot.docs.map((doc) => ({
         ...doc.data(),
         id: doc.id,
         timestamp: doc.data().timestamp?.toDate().getTime(),
       }));
 
-      setNews(newData);
+      const newPostList = result && result.length > 0 ? result : false;
+
+      setPostList(newPostList);
     });
 
     return unsubscribe;
@@ -29,7 +31,7 @@ const useFetchDataFirebase = (categoryName: string, isSingleCategory?: boolean) 
     fetchData();
   }, []);
 
-  return news;
+  return postList;
 };
 
 export default useFetchDataFirebase;

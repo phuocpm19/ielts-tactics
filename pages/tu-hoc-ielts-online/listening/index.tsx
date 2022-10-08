@@ -7,7 +7,7 @@ import TuHocIeltsListening from '@/screens/TuHocIeltsOnline/Listening';
 const TuHocIeltsListeningPage: NextPage = () => {
   return (
     <>
-      <HeadSeo title="Listening" />
+      <HeadSeo title="Listening list" />
 
       <Layout>
         <TuHocIeltsListening />

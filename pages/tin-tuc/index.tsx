@@ -7,7 +7,7 @@ import TinTuc from '@/screens/TinTuc';
 const TinTucPage: NextPage = () => {
   return (
     <>
-      <HeadSeo title="Tin tuc" />
+      <HeadSeo title="Tin tuc list" />
 
       <Layout>
         <TinTuc />

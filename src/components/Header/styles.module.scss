@@ -4,10 +4,15 @@
   display: initial;
 
   .visibleDesktops {
-    display: initial;
+    display: none;
 
-    @include for-mobiles {
-      display: none;
+    @include for-desktops-lg {
+      display: initial;
+    }
+    .banner {
+      img {
+        width: 100%;
+      }
     }
 
     .infoWrapper {
@@ -23,6 +28,13 @@
       &Left {
         display: flex;
         align-items: center;
+        justify-content: space-between;
+        width: 100%;
+
+        @include for-desktops-xl {
+          justify-content: flex-start;
+          width: auto;
+        }
 
         &__logo {
           margin-right: 48px;
@@ -30,8 +42,7 @@
       }
 
       &Right {
-        display: flex;
-        align-items: center;
+        display: none;
 
         &__search {
           input[class='ant-input'] {
@@ -58,6 +69,11 @@
           button {
             margin-left: 8px;
           }
+        }
+
+        @include for-desktops-xl {
+          display: flex;
+          align-items: center;
         }
       }
     }
@@ -155,10 +171,42 @@
   }
 
   .visibleMobiles {
-    display: none;
+    display: block;
+    border-bottom: 1px solid $color-border;
 
-    @include for-mobiles {
-      display: block;
+    @include for-desktops-lg {
+      display: none;
+    }
+
+    .toolBar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 16px;
+
+      .empty {
+        width: 24px;
+      }
+    }
+  }
+}
+
+.MenuMobile {
+  :global {
+    .ant-drawer-header-title {
+      overflow-x: hidden;
+    }
+
+    .ant-drawer-header {
+      padding: 8px 16px;
+    }
+
+    .ant-drawer-title {
+      transform: translateX(25%);
+    }
+
+    .ant-menu-inline {
+      border-right: none;
     }
   }
 }

@@ -7,7 +7,7 @@ import LichKhaiGiang from '@/screens/LichKhaiGiang';
 const LichKhaiGiangPage: NextPage = () => {
   return (
     <>
-      <HeadSeo title="Lich khai giang" />
+      <HeadSeo title="Lich khai giang list" />
 
       <Layout>
         <LichKhaiGiang />

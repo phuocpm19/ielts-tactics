@@ -16,8 +16,13 @@
     }
   }
 
-  &-thumb {
+  &__thumb {
     border-radius: 4px;
+    margin-bottom: 8px;
+
+    @include for-desktops-lg {
+      margin-bottom: 0;
+    }
 
     img {
       border-radius: 4px;

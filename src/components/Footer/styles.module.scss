@@ -10,13 +10,32 @@
   }
 
   .info {
+    text-align: center;
+    margin-bottom: 24px;
+
+    @include for-desktops-xl {
+      text-align: left;
+      margin-bottom: 0px;
+    }
+
     .logo {
       margin-bottom: 16px;
     }
 
     .about {
+      .headerCommon {
+        display: none;
+
+        @include for-desktops-xl {
+          display: block;
+        }
+      }
       p {
-        text-align: justify;
+        text-align: center;
+
+        @include for-desktops-xl {
+          text-align: justify;
+        }
       }
     }
   }

@@ -32,11 +32,12 @@
 
   &.positionFooter {
     .list {
-      display: inline-block;
+      display: block;
 
       .item {
-        display: inline-flex;
+        display: flex;
         border: 1px solid $color-yellow;
+        width: fit-content;
 
         &:not(:last-child) {
           margin-right: 0;
