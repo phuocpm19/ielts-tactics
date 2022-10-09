@@ -14,7 +14,7 @@ import { EIconName } from '@/components/Icon/enums';
 import Loading from '@/components/Loading';
 
 import styles from './styles.module.scss';
-import { TaiSaoList } from './data';
+import { LoTrinhList, TaiSaoList } from './data';
 
 export default function TrangChu() {
   const loading = useFakeLoading(1000);
@@ -117,11 +117,57 @@ export default function TrangChu() {
           </Container>
         </div>
 
-        <br />
-        <br />
-        <br />
-        <br />
-        <SliderList />
+        <div className={styles['LoTrinh']}>
+          <Container>
+            <div className={styles['LoTrinh__header']}>
+              <div className={styles['LoTrinh__header-heading']}>LỘ TRÌNH KHÓA HỌC IELTS TACTICS TINH GỌN</div>
+              <div className={`${styles['LoTrinh__header-image']} image-common`}>
+                <img src="/images/cam-ket.png" />
+              </div>
+            </div>
+
+            <div className={`${styles['LoTrinh__image']} image-common`}>
+              <img src="/images/lo-trinh.png" />
+            </div>
+
+            <div className={styles['LoTrinh__detail']}>
+              <div className={styles['LoTrinh__detail-header']}>CHI TIẾT LỘ TRÌNH THEO MỤC TIÊU</div>
+              <div className={styles['LoTrinh__detail-list']}>
+                <Row gutter={16}>
+                  {LoTrinhList.map((item) => (
+                    <Col xs={24} md={8} key={item.id}>
+                      <div className={styles['LoTrinh__detail-item']}>
+                        <Link href={item.href}>
+                          <a className={styles['LoTrinh__detail-item-link']}>{item.title}</a>
+                        </Link>
+                      </div>
+                    </Col>
+                  ))}
+                </Row>
+              </div>
+            </div>
+          </Container>
+        </div>
+
+        <div className={styles['KhamPha']}>
+          <Container>
+            <div className={styles['KhamPha__header']}>
+              <div className={styles['KhamPha__header-heading']}>
+                <div className={styles['KhamPha__header-heading-text']}>KHÁM PHÁ KHO TÀI LIỆU BÀI GIẢNG IELTS</div>
+                <div className={styles['KhamPha__header-heading-image']}>
+                  <img src="/images/doc-quyen.png" alt="image" />
+                </div>
+              </div>
+              <div className={styles['KhamPha__header-subHeading']}>
+                Chất lượng - Chi tiết - Update 24h bởi đội ngũ chuyên gia học thuật giàu kinh nghiệm!
+              </div>
+            </div>
+
+            <div className={styles['KhamPha__body']}>
+              <SliderList />
+            </div>
+          </Container>
+        </div>
       </div>
     </>
   );

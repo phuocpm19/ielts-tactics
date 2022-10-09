@@ -205,4 +205,115 @@
       }
     }
   }
+
+  .LoTrinh {
+    margin-bottom: 96px;
+    padding: 32px 0 48px 0;
+    background-image: linear-gradient(to bottom right, #fef872, #ffd110);
+
+    &__header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+
+      &-heading {
+        font-size: 32px;
+        line-height: 1.35;
+        margin-right: 16px;
+        font-weight: 600;
+      }
+    }
+
+    &__image {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    &__detail {
+      &-header {
+        font-size: 24px;
+        line-height: 32px;
+        margin-bottom: 16px;
+        font-weight: 600;
+        text-align: center;
+      }
+
+      &-item {
+        margin-bottom: 16px;
+
+        &-link {
+          border: 1px solid $color-purple;
+          border-radius: 8px;
+          font-size: 20px;
+          line-height: 1.35;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: 0.3s;
+          text-align: center;
+          text-transform: uppercase;
+          font-weight: 600;
+          background-color: $color-purple;
+          color: white;
+          padding: 24px 16px;
+          height: auto;
+
+          &:hover {
+            transition: 0.3s;
+            color: $color-purple;
+            background-color: $color-yellow;
+          }
+
+          @include for-tablets {
+            white-space: pre-wrap;
+          }
+
+          @include for-desktops-lg {
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+  }
+
+  .KhamPha {
+    background-image: url('/images/chung-chi.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 96px 0;
+
+    &__header {
+      margin-bottom: 36px;
+
+      &-heading {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+        margin-bottom: 8px;
+
+        @include for-desktops-lg {
+          flex-direction: row;
+        }
+
+        &-text {
+          font-size: 32px;
+          font-weight: 600;
+          margin-right: 16px;
+        }
+      }
+
+      &-subHeading {
+        font-size: 18px;
+        text-align: center;
+      }
+    }
+
+    &__body {
+      margin-bottom: 24px;
+    }
+  }
 }

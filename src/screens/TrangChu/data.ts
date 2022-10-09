@@ -1,3 +1,5 @@
+import { Paths } from '@/helpers/router';
+
 export const TaiSaoList = [
   {
     id: 1,
@@ -22,5 +24,23 @@ export const TaiSaoList = [
     imgSrc: '/images/why-4.jpg',
     title: 'LỢI THẾ TƯƠNG LAI',
     desc: 'IELTS tạo lợi thế du học, xin học bổng, tìm việc hay giúp người trẻ tiếp cận với kho tri thức khổng lồ trên thế giới, thăng tiến sự nghiệp',
+  },
+];
+
+export const LoTrinhList = [
+  {
+    id: 1,
+    href: Paths.KhoaHoc55,
+    title: 'Mục tiêu \n5.5+ IELTS',
+  },
+  {
+    id: 1,
+    href: Paths.KhoaHoc65,
+    title: 'Mục tiêu \n6.5+ IELTS',
+  },
+  {
+    id: 1,
+    href: Paths.KhoaHoc7075,
+    title: 'Mục tiêu \n7.0 - 7.5+ IELTS',
   },
 ];
