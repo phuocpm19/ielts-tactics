@@ -4,4 +4,135 @@
   &__item {
     background-color: green;
   }
+
+  .Item__wrapper {
+    padding: 0 8px;
+  }
+
+  .Item {
+    padding: 76px 32px 60px 32px;
+    background-color: white;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &__header {
+      margin-bottom: 24px;
+      position: relative;
+      display: flex;
+      justify-content: flex-end;
+
+      &-number {
+        position: absolute;
+        font-size: 112px;
+        font-weight: 600;
+        line-height: 1;
+        background: -webkit-linear-gradient(#e5e5e5, #ffffff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        z-index: 1;
+        top: -64px;
+        left: -8px;
+      }
+
+      &-heading {
+        position: relative;
+        z-index: 2;
+        font-size: 14px;
+        text-transform: uppercase;
+        color: white;
+        padding: 8px 24px;
+        width: calc(50% - 8px);
+        margin-bottom: 16px;
+        background-image: linear-gradient(to right, #45818e, #04d2ff);
+        border-radius: 18px;
+        text-align: center;
+      }
+    }
+
+    &__body {
+      margin-bottom: 24px;
+    }
+
+    &__post {
+      &:not(:last-child) {
+        margin-bottom: 24px;
+      }
+
+      &-thumb {
+        img {
+          border-radius: 4px;
+          height: 104px;
+          object-fit: cover;
+        }
+      }
+
+      &-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+
+        &-title {
+          a {
+            color: $color-05;
+            line-height: 1.35;
+            font-size: 16px;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            -webkit-line-clamp: 3;
+          }
+        }
+
+        &-time {
+          display: flex;
+          align-items: center;
+
+          &-icon {
+            width: 18px;
+            margin-right: 8px;
+          }
+        }
+      }
+    }
+
+    &__footer {
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+
+      > div {
+        width: calc(50% - 8px);
+      }
+    }
+  }
+
+  :global {
+    .slick-prev,
+    .slick-next {
+      width: 40px;
+      height: 40px;
+      display: none !important;
+
+      @include for-desktops-xxl {
+        display: block;
+      }
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+      font-size: 40px;
+      color: $color-purple;
+    }
+
+    .slick-prev {
+      left: -40px;
+    }
+
+    .slick-next {
+      right: -40px;
+    }
+  }
 }

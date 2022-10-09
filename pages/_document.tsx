@@ -47,6 +47,13 @@ class MyDocument extends Document {
           <meta name="facebook-domain-verification" content="c5krj9nmye40er5x6tww7q6k6cpvdd" />
           <meta name="facebook-domain-verification" content="qdqdraspgkeijioo7p04t47rs6jhsj" />
 
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500&family=Roboto:wght@400;500&display=swap"
+            rel="stylesheet"
+          />
+
           {/* Global site tag (gtag.js) - Google Analytics */}
           <script async src="https://www.googletagmanager.com/gtag/js?id=G-9EH3WGTC5G" />
 

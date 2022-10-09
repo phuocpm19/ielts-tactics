@@ -41,6 +41,11 @@
 
         &:hover {
           background-color: $color-e9;
+
+          span,
+          a {
+            color: black;
+          }
         }
       }
     }
