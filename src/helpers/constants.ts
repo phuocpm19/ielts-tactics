@@ -15,3 +15,5 @@ export const CATEGORY_NAME = {
   SU_KIEN: 'Sự kiện',
   HOAT_DONG_NOI_BO: 'Hoạt động nội bộ',
 };
+
+export const TITLE_DEFAULT = 'IELTS Tactics - Luyện thi IELTS Online miễn phí, tự học IELTS từ 0 - 8.5 IELTS';

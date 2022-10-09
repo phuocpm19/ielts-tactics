@@ -7,7 +7,7 @@ import TuHocIeltsReading from '@/screens/TuHocIeltsOnline/Reading';
 const TuHocIeltsReadingPage: NextPage = () => {
   return (
     <>
-      <HeadSeo title="Reading list" />
+      <HeadSeo title="IELTS Reading, tự học IELTS Reading online" />
 
       <Layout>
         <TuHocIeltsReading />
