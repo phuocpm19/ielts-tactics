@@ -7,7 +7,7 @@ import TuHocIeltsVocabulary from '@/screens/TuHocIeltsOnline/Vocabulary';
 const TuHocIeltsVocabularyPage: NextPage = () => {
   return (
     <>
-      <HeadSeo title="Vocabulary list" />
+      <HeadSeo title="IELTS Vocabulary, từ vựng IELTS theo chủ đ" />
 
       <Layout>
         <TuHocIeltsVocabulary />

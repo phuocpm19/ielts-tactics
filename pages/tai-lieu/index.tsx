@@ -7,7 +7,7 @@ import TaiLieu from '@/screens/TaiLieu';
 const TaiLieuPage: NextPage = () => {
   return (
     <>
-      <HeadSeo title="Tai lieu list" />
+      <HeadSeo title="Tổng hợp liệu các khóa học IELTS từ 0 - 8.5+ tại IELTS Tactics" />
 
       <Layout>
         <TaiLieu />

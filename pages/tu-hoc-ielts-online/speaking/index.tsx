@@ -7,7 +7,7 @@ import TuHocIeltsSpeaking from '@/screens/TuHocIeltsOnline/Speaking';
 const TuHocIeltsSpeakingPage: NextPage = () => {
   return (
     <>
-      <HeadSeo title="Speaking list" />
+      <HeadSeo title="IELTS Speaking, tự học IELTS Speaking online miễn phí" />
 
       <Layout>
         <TuHocIeltsSpeaking />

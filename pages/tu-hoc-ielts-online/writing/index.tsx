@@ -7,7 +7,7 @@ import TuHocIeltsWriting from '@/screens/TuHocIeltsOnline/Writing';
 const TuHocIeltsWritingPage: NextPage = () => {
   return (
     <>
-      <HeadSeo title="Writing list" />
+      <HeadSeo title="IELTS Writing, tự học IELTS Writing online miễn phí" />
 
       <Layout>
         <TuHocIeltsWriting />

@@ -7,7 +7,7 @@ import TuHocIeltsOnline from '@/screens/TuHocIeltsOnline';
 const TuHocIeltsOnlinePage: NextPage = () => {
   return (
     <>
-      <HeadSeo title="Tu hoc Ielts Online list" />
+      <HeadSeo title="Tự học IELTS Online, luyện thi IELTS online miễn phí" />
 
       <Layout>
         <TuHocIeltsOnline />

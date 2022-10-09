@@ -7,7 +7,7 @@ import GioiThieu from '@/screens/GioiThieu';
 const GioiThieuPage: NextPage = () => {
   return (
     <>
-      <HeadSeo title="Gioi thieu list" />
+      <HeadSeo title="Giới thiệu về IELTS Tactics" />
 
       <Layout>
         <GioiThieu />

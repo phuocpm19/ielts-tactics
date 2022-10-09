@@ -5,11 +5,12 @@ import HeadSeo from '@/components/HeadSeo';
 import Layout from '@/components/Layout';
 import { TArticle } from '@/components/Article/types';
 import PageDetail from '@/containers/PageDetail';
+import { TITLE_DEFAULT } from '@/helpers/constants';
 
 const TuHocIeltsSpeakingChiTietPage: NextPage<TArticle> = ({ id, title, desc, createAt, content, thumbnail }) => {
   return (
     <>
-      <HeadSeo title="Speaking chi tiet" />
+      <HeadSeo title={title || TITLE_DEFAULT} />
 
       <Layout>
         <PageDetail id={id} title={title} desc={desc} createAt={createAt} content={content} thumbnail={thumbnail} />

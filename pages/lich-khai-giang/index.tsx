@@ -7,7 +7,7 @@ import LichKhaiGiang from '@/screens/LichKhaiGiang';
 const LichKhaiGiangPage: NextPage = () => {
   return (
     <>
-      <HeadSeo title="Lich khai giang list" />
+      <HeadSeo title="Lịch khai giảng các lớp IELTS Tactics mới nhất" />
 
       <Layout>
         <LichKhaiGiang />
