@@ -5,4 +5,6 @@ export type TArticle = {
   createAt: string | null;
   content: string | null;
   thumbnail: string | null;
+  slug: string | null;
+  show: boolean;
 };

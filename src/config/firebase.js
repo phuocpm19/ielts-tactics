@@ -35,6 +35,8 @@ const getPostBySlug = async (collectionName, slug) => {
     createAt: doc.data().createAt,
     content: doc.data().content,
     thumbnail: doc.data().thumbnail,
+    slug: doc.data().slug,
+    show: doc.data().show,
   }));
 
   return post;

@@ -26,9 +26,9 @@ const IconSocialInstagram: React.FC<TSvgProps> = ({ color = EColor.WHITE }) => {
           y2="3.13571"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FFDD55" />
-          <stop offset="0.5" stop-color="#FF543E" />
-          <stop offset="1" stop-color="#C837AB" />
+          <stop stopColor="#FFDD55" />
+          <stop offset="0.5" stopColor="#FF543E" />
+          <stop offset="1" stopColor="#C837AB" />
         </linearGradient>
         <clipPath id="clip0_2159_8833">
           <rect width="20" height="20" fill="white" transform="translate(0 0.5)" />

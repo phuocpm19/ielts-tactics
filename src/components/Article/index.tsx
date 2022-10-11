@@ -10,7 +10,7 @@ import Loading from '@/components/Loading';
 import { TArticle } from './types';
 import styles from './styles.module.scss';
 
-const Article: React.FC<TArticle> = ({ title, desc, createAt, content, thumbnail }) => {
+const Article: React.FC<TArticle> = ({ title, desc, createAt, content, thumbnail, slug, show }) => {
   const loading = useFakeLoading(1500);
 
   return (
