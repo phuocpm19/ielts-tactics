@@ -5,15 +5,33 @@ import HeadSeo from '@/components/HeadSeo';
 import Layout from '@/components/Layout';
 import { TArticle } from '@/components/Article/types';
 import PageDetail from '@/containers/PageDetail';
-import { TITLE_DEFAULT } from '@/helpers/constants';
+import { Paths } from '@/helpers/router';
 
-const TuHocIeltsListeningChiTietPage: NextPage<TArticle> = ({ id, title, desc, createAt, content, thumbnail }) => {
+const TuHocIeltsListeningChiTietPage: NextPage<TArticle> = ({
+  id,
+  title,
+  desc,
+  createAt,
+  content,
+  thumbnail,
+  slug,
+  show,
+}) => {
   return (
     <>
-      <HeadSeo title={title || TITLE_DEFAULT} />
+      <HeadSeo title={title} srcSeo={`${Paths.TuhocIeltsOnlineListening}/${slug}`} desc={desc} thumbnail={thumbnail} />
 
       <Layout>
-        <PageDetail id={id} title={title} desc={desc} createAt={createAt} content={content} thumbnail={thumbnail} />
+        <PageDetail
+          id={id}
+          title={title}
+          desc={desc}
+          createAt={createAt}
+          content={content}
+          thumbnail={thumbnail}
+          slug={slug}
+          show={show}
+        />
       </Layout>
     </>
   );
@@ -31,6 +49,8 @@ export async function getServerSideProps(context: any) {
       createAt: post ? post.createAt : null,
       content: post ? post.content : null,
       thumbnail: post ? post.thumbnail : null,
+      slug: post ? post.slug : null,
+      show: post ? post.show : null,
     },
   };
 }

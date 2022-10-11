@@ -6,7 +6,7 @@ import Loading from '@/components/Loading';
 import Container from '@/components/Container';
 import Article from '@/components/Article';
 
-export default function PageDetail({ id, title, desc, createAt, content, thumbnail }: TArticle) {
+export default function PageDetail({ id, title, desc, createAt, content, thumbnail, slug, show }: TArticle) {
   const loading = useFakeLoading(1500);
 
   return (
@@ -14,7 +14,16 @@ export default function PageDetail({ id, title, desc, createAt, content, thumbna
       {loading && <Loading />}
 
       <Container isChild>
-        <Article id={id} title={title} desc={desc} createAt={createAt} content={content} thumbnail={thumbnail} />
+        <Article
+          id={id}
+          title={title}
+          desc={desc}
+          createAt={createAt}
+          content={content}
+          thumbnail={thumbnail}
+          slug={slug}
+          show={show}
+        />
       </Container>
     </div>
   );

@@ -5,50 +5,18 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <meta
-            name="news_keywords"
-            content="ielts tactics, khóa học ielts, khoa hoc ielts, khóa học ielts trực tuyến, ielts online, ielts online test, lộ trình ielts, lo trinh ielts, hoc phi ielts tactics, luyen thi ielts, luyện thi ielts, ielts cấp 2, ielts cấp 3, ielts cho người đi làm, ielts cho sinh viên"
-          />
-          <meta
-            name="keywords"
-            content="ielts tactics, khóa học ielts, khoa hoc ielts, khóa học ielts trực tuyến, ielts online, ielts online test, lộ trình ielts, lo trinh ielts, hoc phi ielts tactics, luyen thi ielts, luyện thi ielts, ielts cấp 2, ielts cấp 3, ielts cho người đi làm, ielts cho sinh viên"
-          />
-          <meta
-            name="description"
-            content="Tổng hợp Lộ trình các khóa học IELTS từ 0 - 8.5+ tại IELTS Tactics. Trung tâm luyện thi IELTS Tactics cam kết đầu ra bằng văn bản - Học lại miễn phí đến khi đạt mục tiêu."
-          />
-
-          <meta property="og:type" content="website" />
-          <meta
-            property="og:title"
-            content="IELTS Tactics - Luyện thi IELTS Online miễn phí, tự học IELTS từ 0 - 8.5 IELTS"
-          />
-          <meta property="og:url" content="https://ieltstactics.vn" />
-          <meta
-            property="og:image"
-            content="https://firebasestorage.googleapis.com/v0/b/ielts-tactics-2.appspot.com/o/postImages%2Fthumbnail%20website%20ielts%20tactics%201.jpg?alt=media&token=fc9ecc93-d48b-4642-8441-734ab6871357"
-          />
-          <meta
-            property="og:description"
-            content="Tổng hợp Lộ trình các khóa học IELTS từ 0 - 8.5+ tại IELTS Tactics. Trung tâm luyện thi IELTS Tactics cam kết đầu ra bằng văn bản - Học lại miễn phí đến khi đạt mục tiêu"
-          />
+          <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+          <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
           <meta property="fb:app_id" content="1229988791141046" />
-          <meta
-            content="IELTS Tactics - Luyện thi IELTS Online miễn phí, tự học IELTS từ 0 - 8.5 IELTS"
-            itemProp="headline"
-            property="og:title"
-          />
-          <meta
-            content="IELTS Tactics xây dựng lộ trình tập trung ứng dụng, với hàng loạt kiến thức chi tiết, nâng cao kỹ năng từ Mất gốc đến 8.5+ IELTS"
-            itemProp="description"
-            property="og:description"
-          />
-
+          <meta property="og:type" content="website" />
           <meta name="facebook-domain-verification" content="c5krj9nmye40er5x6tww7q6k6cpvdd" />
           <meta name="facebook-domain-verification" content="qdqdraspgkeijioo7p04t47rs6jhsj" />
-
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
+          <link rel="preconnect" href="https://www.googletagmanager.com" />
+          <link rel="preconnect" href="https://www.facebook.com" />
+          <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+          <link rel="dns-prefetch" href="https://www.facebook.com" />
           <link
             href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500&family=Roboto:wght@400;500&display=swap"
             rel="stylesheet"
