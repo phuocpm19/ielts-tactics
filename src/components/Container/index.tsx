@@ -17,10 +17,10 @@ export default function Container({ children, isChild }: IContainerProps) {
         <>{children}</>
       ) : (
         <Row gutter={24}>
-          <Col xs={24} lg={16}>
+          <Col xs={24} lg={18}>
             {children}
           </Col>
-          <Col lg={8}>
+          <Col lg={6}>
             <SidebarRight />
           </Col>
         </Row>

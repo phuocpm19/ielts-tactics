@@ -21,6 +21,7 @@ export interface IHeaderProps {
 type MenuItem = Required<MenuProps>['items'][number];
 
 export default function Header({ showBanner }: IHeaderProps) {
+  const [bannerVisible, setBannerVisible] = useState<boolean>(true);
   const [menuMobileVisible, setMenuMobileVisible] = useState<boolean>(false);
   const [openKeys, setOpenKeys] = useState(['menu2']);
   const rootSubmenuKeys = ['menu1', 'menu2', 'menu3', 'menu4', 'menu6', 'menu6', 'menu7', 'menu8'];
@@ -188,16 +189,24 @@ export default function Header({ showBanner }: IHeaderProps) {
     setMenuMobileVisible(false);
   };
 
+  const closeBanner = () => {
+    setBannerVisible(false);
+  };
+
   return (
     <div className={styles.Header}>
       <div className={styles.visibleDesktops}>
-        {showBanner && (
+        {bannerVisible && showBanner && (
           <div className={styles.banner}>
             <Link href={Paths.BannerTop}>
               <a className="image-common">
                 <img src="/images/banner.jpg" alt="banner" />
               </a>
             </Link>
+
+            <div className={`${styles.banner__icon} icon-common`} onClick={closeBanner}>
+              <Icon name={EIconName.ICON_CLOSE} />
+            </div>
           </div>
         )}
 

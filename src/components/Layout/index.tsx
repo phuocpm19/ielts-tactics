@@ -7,6 +7,7 @@ import Icon from '@/components/Icon';
 import { EIconName } from '@/components/Icon/enums';
 
 import styles from './styles.module.scss';
+import Link from 'next/link';
 
 export interface ILayoutProps {
   showBanner?: boolean;
@@ -21,6 +22,14 @@ export default function Layout({ showBanner, children }: ILayoutProps) {
       {children}
 
       <Footer />
+
+      <div className={styles.message__wrapper}>
+        <div className={styles.message}>
+          <a href="https://www.m.me//Ieltstactics.band9" target="_blank" rel="noopener noreferrer">
+            <Icon name={EIconName.ICON_MESSAGE} />
+          </a>
+        </div>
+      </div>
 
       <BackTop className={styles.backTop}>
         <div className={styles.icon}>

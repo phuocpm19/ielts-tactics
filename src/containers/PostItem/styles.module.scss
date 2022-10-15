@@ -20,16 +20,35 @@
     border-radius: 4px;
     margin-bottom: 8px;
 
+    a {
+      overflow: hidden;
+    }
+
     @include for-desktops-lg {
       margin-bottom: 0;
     }
 
     img {
       border-radius: 4px;
+      transition: 0.3s;
+
+      &:hover {
+        transform: scale(1.2);
+        transition: 0.3s;
+      }
     }
   }
 
   &__info {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    a:hover {
+      color: $color-purple;
+    }
+
     &-title {
       height: 50px;
 
