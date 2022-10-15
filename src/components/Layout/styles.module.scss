@@ -1,8 +1,21 @@
 @import '@/assets/styles/common';
 
-.ant-back-top {
-  bottom: 16px;
-  right: 16px;
+.message {
+  &__wrapper {
+    position: fixed;
+    right: 16px;
+    bottom: 72px;
+    width: 40px;
+    height: 40px;
+    background-color: #0a7cff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  }
+
+  width: 24px;
+  height: 24px;
 }
 
 .backTop {
@@ -15,12 +28,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
+  border: 1px solid white;
+  bottom: 16px !important;
+  right: 16px !important;
 
-.icon {
-  background-color: $color-yellow;
+  .icon {
+    background-color: $color-yellow;
 
-  svg path {
-    fill: white;
+    svg path {
+      fill: white;
+    }
   }
 }

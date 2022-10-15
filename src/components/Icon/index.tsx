@@ -18,6 +18,8 @@ import IconClock from './clock';
 import IconUp from './up';
 import IconDocumentYellow from './document-yellow';
 import IconCheckRed from './check-red';
+import IconClose from './close';
+import IconMessage from './message';
 
 const Icon: React.FC<TIconProps> = ({ name, color }) => {
   const renderIcon = (): React.ReactElement => {
@@ -50,6 +52,10 @@ const Icon: React.FC<TIconProps> = ({ name, color }) => {
         return <IconDocumentYellow color={color} />;
       case EIconName.ICON_CHECK_RED:
         return <IconCheckRed color={color} />;
+      case EIconName.ICON_CLOSE:
+        return <IconClose color={color} />;
+      case EIconName.ICON_MESSAGE:
+        return <IconMessage color={color} />;
 
       default:
         return <></>;
