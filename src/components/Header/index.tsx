@@ -1,5 +1,5 @@
 // eslint-disable-next-line @next/next/no-img-element
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Drawer, Input, Menu, MenuProps } from 'antd';
 
@@ -13,6 +13,7 @@ import Button from '@/components/Button';
 import { EButtonVariant } from '@/components/Button/enums';
 
 import { MENU, navList } from './data';
+import classNames from 'classnames';
 
 export interface IHeaderProps {
   showBanner?: boolean;
@@ -23,6 +24,7 @@ type MenuItem = Required<MenuProps>['items'][number];
 export default function Header({ showBanner }: IHeaderProps) {
   const [bannerVisible, setBannerVisible] = useState<boolean>(true);
   const [menuMobileVisible, setMenuMobileVisible] = useState<boolean>(false);
+  const [headerSticky, setHeaderSticky] = useState<boolean>(false);
   const [openKeys, setOpenKeys] = useState(['menu2']);
   const rootSubmenuKeys = ['menu1', 'menu2', 'menu3', 'menu4', 'menu6', 'menu6', 'menu7', 'menu8'];
 
@@ -193,6 +195,16 @@ export default function Header({ showBanner }: IHeaderProps) {
     setBannerVisible(false);
   };
 
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 380) {
+        setHeaderSticky(true);
+      } else {
+        setHeaderSticky(false);
+      }
+    });
+  }, []);
+
   return (
     <div className={styles.Header}>
       <div className={styles.visibleDesktops}>
@@ -200,7 +212,7 @@ export default function Header({ showBanner }: IHeaderProps) {
           <div className={styles.banner}>
             <Link href={Paths.BannerTop}>
               <a className="image-common">
-                <img src="/images/banner.jpg" alt="banner" />
+                <img src="/images/banner-t10.jpeg" alt="banner" />
               </a>
             </Link>
 
@@ -239,7 +251,7 @@ export default function Header({ showBanner }: IHeaderProps) {
           </Container>
         </div>
 
-        <div className={styles.navWrapper}>
+        <div className={classNames(styles.navWrapper, { [styles.sticky]: headerSticky })}>
           <Container>
             <div className={styles.navList}>
               {navList.map((item) => (

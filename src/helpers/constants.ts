@@ -23,5 +23,5 @@ export const THUMBNAIL_DEFAULT =
   'https://firebasestorage.googleapis.com/v0/b/ielts-tactics-2.appspot.com/o/postImages%2Fthumbnail%20website%20ielts%20tactics%201.jpg?alt=media&token=fc9ecc93-d48b-4642-8441-734ab6871357';
 export const KEYWORDS_DEFAULT =
   'ielts tactics, khóa học ielts, khoa hoc ielts, khóa học ielts trực tuyến, ielts online, ielts online test, lộ trình ielts, lo trinh ielts, hoc phi ielts tactics, luyen thi ielts, luyện thi ielts, ielts cấp 2, ielts cấp 3, ielts cho người đi làm, ielts cho sinh viên';
-export const DOMAIN_DEFAULT = 'https://ielts-tactics.vercel.app/';
-// export const DOMAIN_DEFAULT = 'https://ieltstactics.vn/';
+// export const DOMAIN_DEFAULT = 'https://ielts-tactics.vercel.app/';
+export const DOMAIN_DEFAULT = 'https://ieltstactics.vn/';
