@@ -207,7 +207,7 @@
   }
 
   .LoTrinh {
-    margin-bottom: 96px;
+    // margin-bottom: 96px;
     padding: 32px 0 48px 0;
     background-image: linear-gradient(to bottom right, #fef872, #ffd110);
 
@@ -243,7 +243,8 @@
         margin-bottom: 16px;
 
         &-link {
-          border: 1px solid $color-purple;
+          // border: 1px solid $color-purple;
+          border: 1px solid red;
           border-radius: 8px;
           font-size: 20px;
           line-height: 1.35;
@@ -254,14 +255,16 @@
           text-align: center;
           text-transform: uppercase;
           font-weight: 600;
-          background-color: $color-purple;
+          // background-color: $color-purple;
+          background-color: red;
           color: white;
           padding: 24px 16px;
           height: auto;
 
           &:hover {
             transition: 0.3s;
-            color: $color-purple;
+            // color: $color-purple;
+            color: red;
             background-color: $color-yellow;
           }
 

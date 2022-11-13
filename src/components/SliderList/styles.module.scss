@@ -41,11 +41,12 @@
         z-index: 2;
         font-size: 14px;
         text-transform: uppercase;
-        color: white;
+        color: black;
         padding: 8px 24px;
         width: calc(50% - 8px);
         margin-bottom: 16px;
-        background-image: linear-gradient(to right, #45818e, #04d2ff);
+        // background-image: linear-gradient(to right, #45818e, #04d2ff);
+        background-color: #fef200;
         border-radius: 18px;
         text-align: center;
       }
@@ -116,8 +117,8 @@
       height: 40px;
       display: none !important;
 
-      @include for-desktops-xxl {
-        display: block;
+      @include for-desktops-xl {
+        display: block !important;
       }
     }
 
@@ -125,6 +126,7 @@
     .slick-next:before {
       font-size: 40px;
       color: $color-purple;
+      // color: #fef200;
     }
 
     .slick-prev {

@@ -72,10 +72,123 @@ export default function SliderList(props: ISliderListProps) {
       },
     ],
   };
+
+  const showSliderList =
+    showListVocabulary ||
+    showListGrammar ||
+    showListReading ||
+    showListListening ||
+    showListSpeaking ||
+    showListWriting;
+
+  const sliderListData = [
+    {
+      number: '1',
+      heading: 'Vocabulary',
+      listData: listVocabulary,
+      pathList: pathListVocabulary,
+    },
+    {
+      number: '2',
+      heading: 'Grammar',
+      listData: listGrammar,
+      pathList: pathListGrammar,
+    },
+    {
+      number: '3',
+      heading: 'Reading',
+      listData: listReading,
+      pathList: pathListReading,
+    },
+    {
+      number: '4',
+      heading: 'Listening',
+      listData: listListening,
+      pathList: pathListListening,
+    },
+    {
+      number: '5',
+      heading: 'Writing',
+      listData: listWriting,
+      pathList: pathListWriting,
+    },
+    // {
+    //   number: '6',
+    //   heading: 'Speaking',
+    //   listData: listSpeaking,
+    //   pathList: pathListSpeaking,
+    // },
+  ];
+
   return (
     <div className={styles.SliderList}>
       <Slider {...settings}>
-        {showListVocabulary && (
+        {showSliderList
+          ? sliderListData?.map((slider: any) => (
+              <>
+                {slider.listData ? (
+                  <div className={styles['Item__wrapper']} key={slider.number}>
+                    <div className={styles.Item}>
+                      <div className={styles['Item__header']}>
+                        <div className={styles['Item__header-number']}>{slider.number}</div>
+                        <div className={styles['Item__header-heading']}>{slider.heading}</div>
+                      </div>
+
+                      <div className={styles['Item__body']}>
+                        {slider.listData?.map((item: any) => (
+                          <div className={styles['Item__post']} key={item.id}>
+                            <Row gutter={16}>
+                              <Col span={12}>
+                                <div className={styles['Item__post-thumb']}>
+                                  <a target="_blank" rel="noopener noreferrer" href={`${slider.pathList}/${item.slug}`}>
+                                    <img src={item.thumbnail} alt="" />
+                                  </a>
+                                </div>
+                              </Col>
+                              <Col span={12}>
+                                <div className={styles['Item__post-info']}>
+                                  <div className={styles['Item__post-info-title']}>
+                                    <a
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      href={`${slider.pathList}/${item.slug}`}
+                                    >
+                                      {item.title}
+                                    </a>
+                                  </div>
+                                  {item.createAt && (
+                                    <div className={styles['Item__post-info-time']}>
+                                      <div className={styles['Item__post-info-time-icon']}>
+                                        <Icon name={EIconName.ICON_CLOCK} />
+                                      </div>
+                                      <div>{convertFullDateTime(item.createAt)}</div>
+                                    </div>
+                                  )}
+                                </div>
+                              </Col>
+                            </Row>
+                          </div>
+                        ))}
+                      </div>
+
+                      <div className={styles['Item__footer']}>
+                        <Button variant={EButtonVariant.WHITE} type={EButtonType.DEFAULT} fullWidth>
+                          {/* <Link href={slider.pathList}>
+                            <a>Xem tất cả</a>
+                          </Link> */}
+                          <a className="aaa" target="_blank" rel="noopener noreferrer" href={slider.pathList}>
+                            Xem tất cả
+                          </a>
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
+                ) : null}
+              </>
+            ))
+          : null}
+
+        {/* {showListVocabulary && (
           <div className={styles['Item__wrapper']}>
             <div className={styles.Item}>
               <div className={styles['Item__header']}>
@@ -89,19 +202,17 @@ export default function SliderList(props: ISliderListProps) {
                     <Row gutter={16}>
                       <Col span={12}>
                         <div className={styles['Item__post-thumb']}>
-                          <Link href={`${pathListVocabulary}/${item.slug}`}>
-                            <a>
-                              <img src={item.thumbnail} alt="" />
-                            </a>
-                          </Link>
+                          <a target="_blank" rel="noopener noreferrer" href={`${pathListVocabulary}/${item.slug}`}>
+                            <img src={item.thumbnail} alt="" />
+                          </a>
                         </div>
                       </Col>
                       <Col span={12}>
                         <div className={styles['Item__post-info']}>
                           <div className={styles['Item__post-info-title']}>
-                            <Link href={`${pathListVocabulary}/${item.slug}`}>
-                              <a>{item.title}</a>
-                            </Link>
+                            <a target="_blank" rel="noopener noreferrer" href={`${pathListVocabulary}/${item.slug}`}>
+                              {item.title}
+                            </a>
                           </div>
                           {item.createAt && (
                             <div className={styles['Item__post-info-time']}>
@@ -397,7 +508,7 @@ export default function SliderList(props: ISliderListProps) {
               </div>
             </div>
           </div>
-        )}
+        )} */}
       </Slider>
     </div>
   );
