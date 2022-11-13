@@ -5,8 +5,8 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-          <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+          <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
+          <meta httpEquiv="Content-Security-Policy" content="upgrade-insecure-requests" />
           <meta property="fb:app_id" content="1229988791141046" />
           <meta property="og:type" content="website" />
           <meta name="facebook-domain-verification" content="c5krj9nmye40er5x6tww7q6k6cpvdd" />

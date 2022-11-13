@@ -1,17 +1,21 @@
 {
   "name": "ielts-tactics",
+  "main": "server.js",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "firebase deploy --only functions, hosting"
   },
   "dependencies": {
     "antd": "^4.23.1",
     "classnames": "^2.3.2",
     "firebase": "^9.10.0",
+    "firebase-admin": "^11.2.0",
+    "firebase-functions": "^4.0.1",
     "formik": "^2.2.9",
     "moment": "^2.29.4",
     "next": "12.3.0",

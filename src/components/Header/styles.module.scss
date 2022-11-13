@@ -55,6 +55,7 @@
 
         &__logo {
           margin-right: 48px;
+          width: 125px;
         }
       }
 
@@ -103,6 +104,12 @@
       left: 0;
       z-index: 9;
       box-shadow: 0 4px 8px $color-f5;
+      transition: 0.3s;
+
+      &.sticky {
+        background-color: #fef200;
+        transition: 0.3s;
+      }
     }
 
     .navList {
