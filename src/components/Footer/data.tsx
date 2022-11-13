@@ -1,4 +1,5 @@
 import { Paths } from '@/helpers/router';
+import { MENU } from '@/components/Header/data';
 
 const branchList = [
   {
@@ -47,6 +48,12 @@ const serviceList = [
     id: 3,
     name: 'Tư vấn lộ trình IELTS miễn phí',
     href: 'https://docs.google.com/forms/d/e/1FAIpQLSdjySwmAj2vltm6roTaEj-k-GnGLH-UijT4UeONzL34TPmY6w/viewform',
+    isInternal: false,
+  },
+  {
+    id: 4,
+    name: MENU.GioiThieuChinhSach.name,
+    href: MENU.GioiThieuChinhSach.href,
     isInternal: false,
   },
 ];

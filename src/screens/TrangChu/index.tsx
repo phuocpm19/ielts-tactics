@@ -36,15 +36,22 @@ export default function TrangChu() {
                 </div>
 
                 <div className={styles['Banner__info-desc']}>
-                  IELTS Tactics - Mang đến những trải nghiệm mới lạ và hiệu quả chân thực qua Dịch vụ học IELTS trực
-                  tuyến chuyên nghiệp hàng đầu dành riêng cho Học sinh, Sinh viên Việt Nam!
+                  IELTS Tactics - Mang đến những trải nghiệm mới lạ và hiệu quả thực tế qua Chương trình luyện thi IELTS
+                  chuyên nghiệp, dành riêng cho người Việt Nam.
                 </div>
 
                 <div className={styles['Banner__info-button']}>
                   <Button variant={EButtonVariant.BLACK_WHITE}>
-                    <Link href={`${Paths.TinTuc}/trung-tam-luyen-thi-ielts-uy-t%C3%ADn-tai-viet-nam-ielts-tactics`}>
+                    {/* <Link href={`${Paths.TinTuc}/trung-tam-luyen-thi-ielts-uy-t%C3%ADn-tai-viet-nam-ielts-tactics`}>
                       <a>Tìm hiểu thêm</a>
-                    </Link>
+                    </Link> */}
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href={`${Paths.KhoaHoc}/lo-tr%C3%ACnh-cac-khoa-hoc-ielts-tactics`}
+                    >
+                      Tìm hiểu thêm
+                    </a>
                   </Button>
                 </div>
 
@@ -108,7 +115,11 @@ export default function TrangChu() {
 
               <div className={styles['ThiThu__right']}>
                 <Button variant={EButtonVariant.BLACK_YELLOW}>
-                  <a target="_blank" rel="noopener noreferrer" href="https://lotrinhkhoahocielts.ieltstactics.vn/">
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSf2G9LdAEHOZChMzEJqS0GmHUqBs5xgsEvAZVCcqidYyvvaYQ/viewform"
+                  >
                     Đăng ký ngay
                   </a>
                 </Button>
@@ -127,7 +138,7 @@ export default function TrangChu() {
             </div>
 
             <div className={`${styles['LoTrinh__image']} image-common`}>
-              <img src="/images/lo-trinh.png" />
+              <img src="/images/lo-trinh-moi.png" />
             </div>
 
             <div className={styles['LoTrinh__detail']}>
@@ -137,9 +148,17 @@ export default function TrangChu() {
                   {LoTrinhList.map((item) => (
                     <Col xs={24} md={8} key={item.id}>
                       <div className={styles['LoTrinh__detail-item']}>
-                        <Link href={item.href}>
+                        {/* <Link href={item.href}>
                           <a className={styles['LoTrinh__detail-item-link']}>{item.title}</a>
-                        </Link>
+                        </Link> */}
+                        <a
+                          className={styles['LoTrinh__detail-item-link']}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          href={item.href}
+                        >
+                          {item.title}
+                        </a>
                       </div>
                     </Col>
                   ))}

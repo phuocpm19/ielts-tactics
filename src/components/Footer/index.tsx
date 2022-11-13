@@ -19,7 +19,7 @@ export default function Footer(props: IFooterProps) {
         <Row gutter={24}>
           <Col xl={8} xs={24}>
             <div className={styles.info}>
-              <div className={styles.logo}>
+              <div className={`${styles.logo} wrapper-logo`}>
                 <Link href={Paths.TrangChu}>
                   <a className="image-common">
                     <img src="/images/logo.png" alt="logo" />
@@ -68,9 +68,17 @@ export default function Footer(props: IFooterProps) {
                 {serviceList.map((item) => (
                   <div className={styles.service__item} key={item.id}>
                     {item.isInternal ? (
-                      <Link href={item.href}>
-                        <a className={styles.service__itemName}>{item.name}</a>
-                      </Link>
+                      // <Link href={item.href}>
+                      //   <a className={styles.service__itemName}>{item.name}</a>
+                      // </Link>
+                      <a
+                        className={styles.service__itemName}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href={item.href}
+                      >
+                        {item.name}
+                      </a>
                     ) : (
                       <a href={item.href} target="_blank" rel="noopener noreferrer">
                         {item.name}

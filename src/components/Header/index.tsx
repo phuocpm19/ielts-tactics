@@ -226,7 +226,7 @@ export default function Header({ showBanner }: IHeaderProps) {
           <Container>
             <div className={styles.info}>
               <div className={styles.infoLeft}>
-                <div className={styles.infoLeft__logo}>
+                <div className={`${styles.infoLeft__logo} wrapper-logo`}>
                   <Link href={Paths.TrangChu}>
                     <a>
                       <img src="/images/logo.png" alt="logo" />
@@ -258,9 +258,17 @@ export default function Header({ showBanner }: IHeaderProps) {
                 <div className={styles.navItem} key={item.id}>
                   <div className={styles.navItem__menu}>
                     {item.href ? (
-                      <Link href={item.href}>
-                        <a className={styles.navItem__menuName}>{item.name}</a>
-                      </Link>
+                      // <Link href={item.href}>
+                      //   <a className={styles.navItem__menuName}>{item.name}</a>
+                      // </Link>
+                      <a
+                        className={styles.navItem__menuName}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href={item.href}
+                      >
+                        {item.name}
+                      </a>
                     ) : (
                       <span className={styles.navItem__menuName}>{item.name}</span>
                     )}
@@ -277,9 +285,17 @@ export default function Header({ showBanner }: IHeaderProps) {
                       {item.subMenu.map((itemChild) => (
                         <div className={styles.navItem__subMenuItem} key={itemChild.id}>
                           {itemChild.isInternal ? (
-                            <Link href={itemChild.href}>
-                              <a className={styles.navItem__subMenuItemName}>{itemChild.name}</a>
-                            </Link>
+                            // <Link href={itemChild.href}>
+                            //   <a className={styles.navItem__subMenuItemName}>{itemChild.name}</a>
+                            // </Link>
+                            <a
+                              className={styles.navItem__subMenuItemName}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              href={itemChild.href}
+                            >
+                              {itemChild.name}
+                            </a>
                           ) : (
                             <a
                               className={styles.navItem__subMenuItemName}
@@ -309,7 +325,7 @@ export default function Header({ showBanner }: IHeaderProps) {
             </div>
           </div>
 
-          <div className={styles.logo}>
+          <div className={`${styles.logo} wrapper-logo`}>
             <Link href={Paths.TrangChu}>
               <a className="image-common">
                 <img src="/images/logo.png" alt="logo" />
@@ -323,11 +339,13 @@ export default function Header({ showBanner }: IHeaderProps) {
         <Drawer
           className={styles.MenuMobile}
           title={
-            <Link href={Paths.TrangChu}>
-              <a className="image-common">
-                <img src="/images/logo.png" alt="logo" />
-              </a>
-            </Link>
+            <div className="wrapper-logo">
+              <Link href={Paths.TrangChu}>
+                <a className="image-common">
+                  <img src="/images/logo.png" alt="logo" />
+                </a>
+              </Link>
+            </div>
           }
           placement="left"
           onClose={hiddenMenuMobiles}

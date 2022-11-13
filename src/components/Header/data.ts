@@ -16,7 +16,7 @@ export const MENU = {
   GioiThieuVeIeltsTactics: {
     id: 'menu21',
     href: Paths.GioiThieuVeIeltsTactics,
-    name: 'Về Ielts Tactics',
+    name: 'Về IELTS Tactics',
     isInternal: true,
   },
   GiaoVien: {
@@ -70,7 +70,7 @@ export const MENU = {
   TuhocIeltsOnline: {
     id: 'menu6',
     href: Paths.TuhocIeltsOnline,
-    name: 'Tự học Ielts online',
+    name: 'Tự học IELTS online',
     isInternal: true,
   },
   TuhocIeltsOnlineVocabulary: {

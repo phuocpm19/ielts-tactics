@@ -1,0 +1,19 @@
+.NotFound {
+  &__wrapper {
+    background-color: #f5f5f5;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__btn {
+    margin-top: 16px;
+    width: 100%;
+
+    button {
+      width: 100%;
+    }
+  }
+}

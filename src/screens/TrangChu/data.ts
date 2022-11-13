@@ -34,12 +34,12 @@ export const LoTrinhList = [
     title: 'Mục tiêu \n5.5+ IELTS',
   },
   {
-    id: 1,
+    id: 2,
     href: Paths.KhoaHoc65,
     title: 'Mục tiêu \n6.5+ IELTS',
   },
   {
-    id: 1,
+    id: 3,
     href: Paths.KhoaHoc7075,
     title: 'Mục tiêu \n7.0 - 7.5+ IELTS',
   },

@@ -14,3 +14,20 @@ export const renderSrcSeo = (slug?: string | null) => {
 
   return srcSeo;
 };
+
+export const sortList = (list: any[]) => {
+  const newList = list.sort((a, b) => {
+    const keyA = a.createAt;
+    const keyB = b.createAt;
+
+    if (keyA < keyB) {
+      return 1;
+    } else {
+      return -1;
+    }
+
+    return 0;
+  });
+
+  return newList;
+};

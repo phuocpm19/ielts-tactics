@@ -5,6 +5,7 @@ import Container from '@/components/Container';
 import PostItem from '@/containers/PostItem';
 import useFakeLoading from '@/helpers/hooks/useFakeLoading';
 import Loading from '@/components/Loading';
+import { sortList } from '@/helpers/functions';
 
 export interface IPostListProps {
   pathList: string;
@@ -25,7 +26,7 @@ export default function PostList({ pathList, postList }: IPostListProps) {
             <Empty />
           ) : (
             <>
-              {postList.map((item: any) => (
+              {sortList(postList).map((item: any) => (
                 <Col xs={24} sm={12} lg={24} key={item.id}>
                   <PostItem
                     hrefPost={`${pathList}/${item.slug}`}
