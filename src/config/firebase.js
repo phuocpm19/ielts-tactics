@@ -1,6 +1,8 @@
 import { initializeApp } from "firebase/app";
 import 'firebase/database';
 import { getFirestore, query, collection, where, getDocs } from 'firebase/firestore';
+import { getStorage } from "firebase/storage";
+
 // import { getAuth } from 'firebase/auth';
 
 const firebaseConfig = {
@@ -20,8 +22,10 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const db = getFirestore();
+// const db = getFirestore();
 // const auth = getAuth();
+const db = getFirestore(app);
+const storage = getStorage(app);
 
 const getPostBySlug = async (collectionName, slug) => {
   const collectionRef = collection(db, collectionName);
@@ -37,9 +41,11 @@ const getPostBySlug = async (collectionName, slug) => {
     thumbnail: doc.data().thumbnail,
     slug: doc.data().slug,
     show: doc.data().show,
+    authorName: doc.data().authorName,
+    createBy: doc.data().createBy,
   }));
 
   return post;
 };
 
-export { db, getPostBySlug };
+export { db, storage, getPostBySlug };

@@ -16,6 +16,8 @@ const TuHocIeltsGrammarChiTietPage: NextPage<TArticle> = ({
   thumbnail,
   slug,
   show,
+  authorName,
+  createBy,
 }) => {
   return (
     <>
@@ -31,6 +33,8 @@ const TuHocIeltsGrammarChiTietPage: NextPage<TArticle> = ({
           thumbnail={thumbnail}
           slug={slug}
           show={show}
+          authorName={authorName}
+          createBy={createBy}
         />
       </Layout>
     </>
@@ -51,6 +55,8 @@ export async function getServerSideProps(context: any) {
       thumbnail: post ? post.thumbnail : null,
       slug: post ? post.slug : null,
       show: post ? post.show : null,
+      // authorName: post ? post?.authorName : null,
+      createBy: post ? post.createBy : null,
     },
   };
 }

@@ -7,7 +7,18 @@ import { TArticle } from '@/components/Article/types';
 import PageDetail from '@/containers/PageDetail';
 import { Paths } from '@/helpers/router';
 
-const GioiThieuChiTietPage: NextPage<TArticle> = ({ id, title, desc, createAt, content, thumbnail, slug, show }) => {
+const GioiThieuChiTietPage: NextPage<TArticle> = ({
+  id,
+  title,
+  desc,
+  createAt,
+  content,
+  thumbnail,
+  slug,
+  show,
+  authorName,
+  createBy,
+}) => {
   return (
     <>
       <HeadSeo title={title} srcSeo={`${Paths.GioiThieu}/${slug}`} desc={desc} thumbnail={thumbnail} />
@@ -22,6 +33,8 @@ const GioiThieuChiTietPage: NextPage<TArticle> = ({ id, title, desc, createAt, c
           thumbnail={thumbnail}
           slug={slug}
           show={show}
+          authorName={authorName}
+          createBy={createBy}
         />
       </Layout>
     </>
@@ -42,6 +55,8 @@ export async function getServerSideProps(context: any) {
       thumbnail: post ? post.thumbnail : null,
       slug: post ? post.slug : null,
       show: post ? post.show : null,
+      // authorName: post ? post?.authorName : null,
+      createBy: post ? post.createBy : null,
     },
   };
 }

@@ -10,8 +10,19 @@ import Loading from '@/components/Loading';
 import { TArticle } from './types';
 import styles from './styles.module.scss';
 
-const Article: React.FC<TArticle> = ({ title, desc, createAt, content, thumbnail, slug, show }) => {
+const Article: React.FC<TArticle> = ({
+  title,
+  desc,
+  createAt,
+  content,
+  thumbnail,
+  slug,
+  show,
+  authorName,
+  createBy,
+}) => {
   const loading = useFakeLoading(1500);
+  // console.log('authorName', authorName);
 
   return (
     <>
@@ -34,7 +45,8 @@ const Article: React.FC<TArticle> = ({ title, desc, createAt, content, thumbnail
         <div className={styles['Article__content']}>
           {content && <div className="CKEditer" dangerouslySetInnerHTML={{ __html: content }}></div>}
 
-          <CommentFake />
+          {/* <CommentFake /> */}
+          <p>Tác giả: {authorName || 'IELTS Tactics Admin'}</p>
         </div>
       </div>
     </>
