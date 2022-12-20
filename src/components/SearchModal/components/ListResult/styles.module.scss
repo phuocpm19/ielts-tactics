@@ -1,0 +1,35 @@
+.ListResultWrapper {
+  :global {
+    .ant-list-item {
+      padding: 16px 0;
+    }
+
+    .ant-list-pagination {
+      text-align: center;
+    }
+  }
+}
+
+.ResultContent {
+  :global {
+    .text-list {
+      line-height: 2;
+    }
+  }
+}
+
+.ThumbnailWrapper {
+  width: 270px;
+  height: 190px;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: var(--bg-hover-primary);
+
+  :global {
+    .img-resize {
+      object-fit: cover;
+      width: inherit;
+      height: inherit;
+    }
+  }
+}

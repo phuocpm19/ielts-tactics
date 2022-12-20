@@ -7,4 +7,6 @@ export type TArticle = {
   thumbnail: string | null;
   slug: string | null;
   show: boolean;
+  authorName: string | null;
+  createBy: string | null;
 };

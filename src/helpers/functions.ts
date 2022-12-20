@@ -1,7 +1,8 @@
 export const toAbsoluteUrl = (pathname: string) => process.env.NEXT_PUBLIC_PUBLIC_URL + pathname;
 
 import moment from 'moment';
-import { DOMAIN_DEFAULT } from './constants';
+import { CATEGORY_NAME, DOMAIN_DEFAULT } from './constants';
+import { Paths } from './router';
 
 export const convertFullDateTime = (timeISO: string): string => {
   const date = new Date(timeISO);
@@ -30,4 +31,26 @@ export const sortList = (list: any[]) => {
   });
 
   return newList;
+};
+
+export const renderPathArticle = (categoryName: string) => {
+  switch (categoryName) {
+    case CATEGORY_NAME.GIOI_THIEU:
+      return Paths.GioiThieu;
+    case CATEGORY_NAME.GIAO_VIEN:
+      return Paths.GiaoVien;
+    case CATEGORY_NAME.LICH_KHAI_GIANG:
+      return Paths.LichKhaiGiang;
+    case CATEGORY_NAME.KHOA_HOC:
+      return Paths.LichKhaiGiang;
+    case CATEGORY_NAME.TAI_LIEU:
+      return Paths.TaiLieu;
+    case CATEGORY_NAME.HOC_IELTS_ONLINE:
+      return Paths.TuhocIeltsOnline;
+    case CATEGORY_NAME.TIN_TUC:
+      return Paths.TinTuc;
+
+    default:
+      return Paths.TrangChu;
+  }
 };

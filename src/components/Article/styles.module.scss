@@ -44,15 +44,16 @@
       height: auto !important;
 
       table {
-        margin: auto;
-        overflow: scroll;
+        // margin: auto;
+        overflow-y: scroll;
       }
     }
 
     figure.image,
     figure.table {
-      margin: auto;
+      // margin: auto;
       max-width: 100%;
+      float: unset !important;
     }
 
     figure.image {

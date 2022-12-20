@@ -25,3 +25,8 @@ export const KEYWORDS_DEFAULT =
   'ielts tactics, khóa học ielts, khoa hoc ielts, khóa học ielts trực tuyến, ielts online, ielts online test, lộ trình ielts, lo trinh ielts, hoc phi ielts tactics, luyen thi ielts, luyện thi ielts, ielts cấp 2, ielts cấp 3, ielts cho người đi làm, ielts cho sinh viên';
 // export const DOMAIN_DEFAULT = 'https://ielts-tactics.vercel.app/';
 export const DOMAIN_DEFAULT = 'https://ieltstactics.vn/';
+
+export const ALGOLIA_APP_ID = 'A4HLRD53CU';
+export const ALGOLIA_API_KEY_SEARCH_POST_LIST = '50f5846abc2ca77038d7abda56f24193';
+export const EMPTY_IMAGE_LINK =
+  'https://firebasestorage.googleapis.com/v0/b/ielts-tactics-2.appspot.com/o/assets%2Fimage%2Fempty-data%2Fempty-image.jpg?alt=media&token=64d2c116-da6d-416a-9333-c3f0eac731c4';

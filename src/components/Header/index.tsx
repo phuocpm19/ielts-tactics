@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Drawer, Input, Menu, MenuProps } from 'antd';
+import { Button as ButtonAntd } from 'antd';
 
 import { Paths } from '@/helpers/router';
 import styles from './styles.module.scss';
@@ -11,6 +12,7 @@ import { EIconName } from '@/components/Icon/enums';
 import Container from '@/components/Container';
 import Button from '@/components/Button';
 import { EButtonVariant } from '@/components/Button/enums';
+import SearchModal from '@/components/SearchModal';
 
 import { MENU, navList } from './data';
 import classNames from 'classnames';
@@ -27,6 +29,16 @@ export default function Header({ showBanner }: IHeaderProps) {
   const [headerSticky, setHeaderSticky] = useState<boolean>(false);
   const [openKeys, setOpenKeys] = useState(['menu2']);
   const rootSubmenuKeys = ['menu1', 'menu2', 'menu3', 'menu4', 'menu6', 'menu6', 'menu7', 'menu8'];
+
+  const [modalSearchVisible, setModalSearchVisible] = useState<boolean>(false);
+
+  const showModalSearch = () => {
+    setModalSearchVisible(true);
+  };
+
+  const hiddenModalSearch = () => {
+    setModalSearchVisible(false);
+  };
 
   const getItem = (label: React.ReactNode, key: React.Key, children?: MenuItem[], type?: 'group'): MenuItem => {
     return {
@@ -206,154 +218,155 @@ export default function Header({ showBanner }: IHeaderProps) {
   }, []);
 
   return (
-    <div className={styles.Header}>
-      <div className={styles.visibleDesktops}>
-        {bannerVisible && showBanner && (
-          <div className={styles.banner}>
-            <Link href={Paths.BannerTop}>
-              <a className="image-common">
+    <>
+      <div className={styles.Header}>
+        <div className={styles.visibleDesktops}>
+          {bannerVisible && showBanner && (
+            <div className={styles.banner}>
+              <a className="image-common" target="_blank" rel="noopener noreferrer" href={Paths.BannerTop}>
                 <img src="/images/banner-t10.jpeg" alt="banner" />
               </a>
-            </Link>
 
-            <div className={`${styles.banner__icon} icon-common`} onClick={closeBanner}>
-              <Icon name={EIconName.ICON_CLOSE} />
+              <div className={`${styles.banner__icon} icon-common`} onClick={closeBanner}>
+                <Icon name={EIconName.ICON_CLOSE} />
+              </div>
             </div>
-          </div>
-        )}
+          )}
 
-        <div className={styles.infoWrapper}>
-          <Container>
-            <div className={styles.info}>
-              <div className={styles.infoLeft}>
-                <div className={`${styles.infoLeft__logo} wrapper-logo`}>
-                  <Link href={Paths.TrangChu}>
-                    <a>
+          <div className={styles.infoWrapper}>
+            <Container>
+              <div className={styles.info}>
+                <div className={styles.infoLeft}>
+                  <div className={`${styles.infoLeft__logo} wrapper-logo`}>
+                    <a target="_blank" rel="noopener noreferrer" href={Paths.TrangChu}>
                       <img src="/images/logo.png" alt="logo" />
                     </a>
-                  </Link>
+                  </div>
+
+                  <ConTact />
                 </div>
 
-                <ConTact />
+                <div className={styles.infoRight}>
+                  <div className={styles.infoRight__search}>
+                    {/* <ButtonAntd onClick={showModalSearch}>CLick me</ButtonAntd> */}
+                    <Input.Search placeholder="Tìm kiếm" style={{ width: 200 }} onClick={showModalSearch} />
+                  </div>
+
+                  <div className={styles.infoRight__button}>
+                    <Button variant={EButtonVariant.GRAY}>Đăng nhập</Button>
+                    <Button variant={EButtonVariant.YELLOW_BLACK}>Đăng ký</Button>
+                  </div>
+                </div>
               </div>
+            </Container>
+          </div>
 
-              <div className={styles.infoRight}>
-                <div className={styles.infoRight__search}>
-                  <Input.Search placeholder="Tìm kiếm" style={{ width: 200 }} />
-                </div>
+          <div className={classNames(styles.navWrapper, { [styles.sticky]: headerSticky })}>
+            <Container>
+              <div className={styles.navList}>
+                {navList.map((item) => (
+                  <div className={styles.navItem} key={item.id}>
+                    <div className={styles.navItem__menu}>
+                      {item.href ? (
+                        // <Link href={item.href}>
+                        //   <a className={styles.navItem__menuName}>{item.name}</a>
+                        // </Link>
+                        <a
+                          className={styles.navItem__menuName}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          href={item.href}
+                        >
+                          {item.name}
+                        </a>
+                      ) : (
+                        <span className={styles.navItem__menuName}>{item.name}</span>
+                      )}
 
-                <div className={styles.infoRight__button}>
-                  <Button variant={EButtonVariant.GRAY}>Đăng nhập</Button>
-                  <Button variant={EButtonVariant.YELLOW_BLACK}>Đăng ký</Button>
-                </div>
-              </div>
-            </div>
-          </Container>
-        </div>
-
-        <div className={classNames(styles.navWrapper, { [styles.sticky]: headerSticky })}>
-          <Container>
-            <div className={styles.navList}>
-              {navList.map((item) => (
-                <div className={styles.navItem} key={item.id}>
-                  <div className={styles.navItem__menu}>
-                    {item.href ? (
-                      // <Link href={item.href}>
-                      //   <a className={styles.navItem__menuName}>{item.name}</a>
-                      // </Link>
-                      <a
-                        className={styles.navItem__menuName}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href={item.href}
-                      >
-                        {item.name}
-                      </a>
-                    ) : (
-                      <span className={styles.navItem__menuName}>{item.name}</span>
-                    )}
+                      {item.subMenu && (
+                        <div className={`${styles.navItem__menuIcon} icon-common`}>
+                          <Icon name={EIconName.ICON_ARROW_DOWN} />
+                        </div>
+                      )}
+                    </div>
 
                     {item.subMenu && (
-                      <div className={`${styles.navItem__menuIcon} icon-common`}>
-                        <Icon name={EIconName.ICON_ARROW_DOWN} />
+                      <div className={styles.navItem__subMenu}>
+                        {item.subMenu.map((itemChild) => (
+                          <div className={styles.navItem__subMenuItem} key={itemChild.id}>
+                            {itemChild.isInternal ? (
+                              // <Link href={itemChild.href}>
+                              //   <a className={styles.navItem__subMenuItemName}>{itemChild.name}</a>
+                              // </Link>
+                              <a
+                                className={styles.navItem__subMenuItemName}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                href={itemChild.href}
+                              >
+                                {itemChild.name}
+                              </a>
+                            ) : (
+                              <a
+                                className={styles.navItem__subMenuItemName}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                href={itemChild.href}
+                              >
+                                {itemChild.name}
+                              </a>
+                            )}
+                          </div>
+                        ))}
                       </div>
                     )}
                   </div>
-
-                  {item.subMenu && (
-                    <div className={styles.navItem__subMenu}>
-                      {item.subMenu.map((itemChild) => (
-                        <div className={styles.navItem__subMenuItem} key={itemChild.id}>
-                          {itemChild.isInternal ? (
-                            // <Link href={itemChild.href}>
-                            //   <a className={styles.navItem__subMenuItemName}>{itemChild.name}</a>
-                            // </Link>
-                            <a
-                              className={styles.navItem__subMenuItemName}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              href={itemChild.href}
-                            >
-                              {itemChild.name}
-                            </a>
-                          ) : (
-                            <a
-                              className={styles.navItem__subMenuItemName}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              href={itemChild.href}
-                            >
-                              {itemChild.name}
-                            </a>
-                          )}
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </Container>
-        </div>
-      </div>
-
-      <div className={styles.visibleMobiles}>
-        <div className={styles.toolBar}>
-          <div className={styles.icon} onClick={showMenuMobiles}>
-            <div className="icon-common">
-              <Icon name={EIconName.ICON_HAMBURGER} />
-            </div>
+                ))}
+              </div>
+            </Container>
           </div>
-
-          <div className={`${styles.logo} wrapper-logo`}>
-            <Link href={Paths.TrangChu}>
-              <a className="image-common">
-                <img src="/images/logo.png" alt="logo" />
-              </a>
-            </Link>
-          </div>
-
-          <div className={styles.empty}>&nbsp;</div>
         </div>
 
-        <Drawer
-          className={styles.MenuMobile}
-          title={
-            <div className="wrapper-logo">
+        <div className={styles.visibleMobiles}>
+          <div className={styles.toolBar}>
+            <div className={styles.icon} onClick={showMenuMobiles}>
+              <div className="icon-common">
+                <Icon name={EIconName.ICON_HAMBURGER} />
+              </div>
+            </div>
+
+            <div className={`${styles.logo} wrapper-logo`}>
               <Link href={Paths.TrangChu}>
                 <a className="image-common">
                   <img src="/images/logo.png" alt="logo" />
                 </a>
               </Link>
             </div>
-          }
-          placement="left"
-          onClose={hiddenMenuMobiles}
-          open={menuMobileVisible}
-        >
-          <Menu mode="inline" openKeys={openKeys} onOpenChange={onOpenChange} items={items} />
-        </Drawer>
+
+            <div className={styles.empty}>&nbsp;</div>
+          </div>
+
+          <Drawer
+            className={styles.MenuMobile}
+            title={
+              <div className="wrapper-logo">
+                <Link href={Paths.TrangChu}>
+                  <a className="image-common">
+                    <img src="/images/logo.png" alt="logo" />
+                  </a>
+                </Link>
+              </div>
+            }
+            placement="left"
+            onClose={hiddenMenuMobiles}
+            open={menuMobileVisible}
+          >
+            <Menu mode="inline" openKeys={openKeys} onOpenChange={onOpenChange} items={items} />
+          </Drawer>
+        </div>
       </div>
-    </div>
+
+      <SearchModal visible={modalSearchVisible} onCancel={hiddenModalSearch} onSubmit={hiddenModalSearch} />
+    </>
   );
 }

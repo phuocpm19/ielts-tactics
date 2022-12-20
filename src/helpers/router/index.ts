@@ -1,6 +1,6 @@
 export const Paths = {
   TrangChu: '/',
-  BannerTop: '/',
+  BannerTop: 'https://docs.google.com/forms/d/e/1FAIpQLSdjySwmAj2vltm6roTaEj-k-GnGLH-UijT4UeONzL34TPmY6w/viewform ',
 
   GioiThieu: '/gioi-thieu',
   GioiThieuVeIeltsTactics: '/tin-tuc/trung-tam-luyen-thi-ielts-uy-tín-tai-viet-nam-ielts-tactics',
