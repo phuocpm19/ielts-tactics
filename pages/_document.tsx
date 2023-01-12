@@ -11,6 +11,7 @@ class MyDocument extends Document {
           <meta property="og:type" content="website" />
           <meta name="facebook-domain-verification" content="c5krj9nmye40er5x6tww7q6k6cpvdd" />
           <meta name="facebook-domain-verification" content="qdqdraspgkeijioo7p04t47rs6jhsj" />
+          <meta name="p:domain_verify" content="628f4e4bbe359888ca8a44e7aecc4057" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link rel="preconnect" href="https://www.googletagmanager.com" />

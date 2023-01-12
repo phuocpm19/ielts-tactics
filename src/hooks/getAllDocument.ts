@@ -30,15 +30,8 @@ const useGetAllDocument = ({ categoryName, isSingleCategory, show = true }: IUse
   const [indexLastItem, setIndexLastItem] = useState<number>(20);
 
   const collectionRef = collection(db, 'posts');
-  // const q = isSingleCategory
-  //   ? query(collectionRef, where('singleCategory', '==', categoryName), where('show', '==', show))
-  //   : query(collectionRef, where('category', '==', categoryName), where('show', '==', show));
-  const whereCategory = isSingleCategory
-    ? where('singleCategory', '==', categoryName)
-    : where('category', '==', categoryName);
   const setOrder = orderBy('createAt', 'desc');
-  const whereFieldShow = where('show', '==', true);
-  const documentLimit = 4;
+  const documentLimit = 8;
 
   let dataFromFirebase: any[] = [];
   let nextData: any[] = [];
@@ -59,8 +52,12 @@ const useGetAllDocument = ({ categoryName, isSingleCategory, show = true }: IUse
   };
 
   const getFirstPage = async () => {
-    // const documentRef = query(collectionRef, setOrder, limit(documentLimit));
-    const documentRef = query(collection(db, 'posts'), limit(4));
+    const documentRef = query(
+      collection(db, 'posts'),
+      limit(documentLimit),
+      where('category', '==', categoryName),
+      where('show', '==', true),
+    );
     try {
       const queryData = await getDocs(documentRef);
       const lastVisible = queryData.docs[queryData.docs.length - 1];
@@ -103,32 +100,6 @@ const useGetAllDocument = ({ categoryName, isSingleCategory, show = true }: IUse
     }
   };
 
-  const fetchCurrentPage = async () => {
-    const current = query(collectionRef, setOrder, startAt(firstDocument), limit(documentLimit));
-    try {
-      const queryData = await getDocs(current);
-
-      let lastVisible;
-      if (queryData.docs.length === 1) {
-        lastVisible = queryData.docs[0];
-      } else {
-        lastVisible = queryData.docs[queryData.docs.length - 1];
-      }
-      const firstVisible = queryData.docs[0];
-
-      setFirstDocument((prevState: any) => [...prevState, firstVisible]);
-      setLastDocument(lastVisible);
-
-      queryData.forEach((doc) => {
-        currentData.push({ ...doc.data(), key: doc.id, id: doc.id });
-      });
-
-      setDocumentList(currentData);
-    } catch (error) {
-      console.log('error', error);
-    }
-  };
-
   const previousPage = async () => {
     firstDocument.pop();
     let prevDoc;
@@ -164,7 +135,6 @@ const useGetAllDocument = ({ categoryName, isSingleCategory, show = true }: IUse
     getFirstPage,
     nextPage,
     previousPage,
-    fetchCurrentPage,
     currentPage,
     totalData,
     documentList, //data trả về từ firebase

@@ -9,8 +9,8 @@ const useFetchDataFirebase = (categoryName: string, isSingleCategory?: boolean) 
   const fetchData = () => {
     const collectionRef = collection(db, 'posts');
     const q = isSingleCategory
-      ? query(collectionRef, where('singleCategory', '==', categoryName))
-      : query(collectionRef, where('category', '==', categoryName));
+      ? query(collectionRef, where('childrenCategory', 'array-contains', categoryName), where('show', '==', true))
+      : query(collectionRef, where('category', '==', categoryName), where('show', '==', true));
 
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       const result = querySnapshot.docs.map((doc) => ({
