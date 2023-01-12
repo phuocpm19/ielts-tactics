@@ -6,6 +6,8 @@ import PostItem from '@/containers/PostItem';
 import useFakeLoading from '@/helpers/hooks/useFakeLoading';
 import Loading from '@/components/Loading';
 import { sortList } from '@/helpers/functions';
+import Pagination from '@/components/Pagination';
+import useGetAllDocument from '@/hooks/getAllDocument';
 
 export interface IPostListProps {
   pathList: string;
@@ -15,6 +17,9 @@ export interface IPostListProps {
 export default function PostList({ pathList, postList }: IPostListProps) {
   const showPostList = postList && postList.length > 0;
   const loading = useFakeLoading(2000);
+
+  // const { nextPage, previousPage, currentPage, totalData, documentList, page, indexFirstItem, indexLastItem } =
+  //   useGetAllDocument({ categoryName: 'tin-tuc' });
 
   return (
     <div className="padding-common">
@@ -39,6 +44,17 @@ export default function PostList({ pathList, postList }: IPostListProps) {
             </>
           )}
         </Row>
+
+        {/* <Pagination
+          documentName={'tin-tuc'}
+          totalData={totalData}
+          currentPage={currentPage}
+          page={page}
+          indexFirstItem={indexFirstItem}
+          indexLastItem={indexLastItem}
+          previousPage={previousPage}
+          nextPage={nextPage}
+        /> */}
       </Container>
     </div>
   );

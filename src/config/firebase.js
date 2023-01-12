@@ -2,6 +2,7 @@ import { initializeApp } from "firebase/app";
 import 'firebase/database';
 import { getFirestore, query, collection, where, getDocs } from 'firebase/firestore';
 import { getStorage } from "firebase/storage";
+import moment from "moment";
 
 // import { getAuth } from 'firebase/auth';
 
@@ -36,7 +37,7 @@ const getPostBySlug = async (collectionName, slug) => {
     id: doc.id,
     title: doc.data().title,
     desc: doc.data().desc,
-    createAt: doc.data().createAt,
+    createAt: moment(doc.data().createAt?.toDate()).format('llll'),
     content: doc.data().content,
     thumbnail: doc.data().thumbnail,
     slug: doc.data().slug,
