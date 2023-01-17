@@ -75,8 +75,8 @@ export default function TinTuc() {
     return documentList.find((item) => item.id === postId);
   });
 
-  console.log('deleteDuplicateObject', deleteDuplicateObject);
-  console.log('documentList', documentList);
+  // console.log('deleteDuplicateObject', deleteDuplicateObject);
+  // console.log('documentList', documentList);
 
   useEffect(() => {
     getData().then();

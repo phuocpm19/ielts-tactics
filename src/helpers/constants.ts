@@ -1,5 +1,5 @@
 export const CATEGORY_NAME = {
-  GIOI_THIEU: 'gioi-thieu ',
+  GIOI_THIEU: 'gioi-thieu',
   GIAO_VIEN: 'giao-vien',
   LICH_KHAI_GIANG: 'lich-khai-giang',
   KHOA_HOC: 'khoa-hoc',
