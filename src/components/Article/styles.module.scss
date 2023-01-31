@@ -35,6 +35,24 @@
     }
   }
 
+  &__content {
+    &-catalog {
+      margin-bottom: 24px;
+
+      :global {
+        .ant-collapse-header-text {
+          display: inline-block;
+          line-height: 22px;
+          font-weight: 600;
+        }
+      }
+
+      ol {
+        margin-bottom: 0;
+      }
+    }
+  }
+
   :global {
     margin-bottom: 48px;
     border-bottom: 1px solid $color-border;

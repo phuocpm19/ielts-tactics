@@ -17,6 +17,7 @@ export default function PageDetail({
   show,
   authorName,
   createBy,
+  mucLucList,
 }: TArticle) {
   const loading = useFakeLoading(1500);
 
@@ -36,6 +37,7 @@ export default function PageDetail({
           show={show}
           authorName={authorName}
           createBy={createBy}
+          mucLucList={mucLucList}
         />
       </Container>
     </div>

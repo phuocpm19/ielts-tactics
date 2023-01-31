@@ -158,12 +158,12 @@ export const navList = [
         name: MENU.GiaoVien.name,
         isInternal: MENU.GiaoVien.isInternal,
       },
-      {
-        id: MENU.GioiThieuChinhSach.id,
-        href: MENU.GioiThieuChinhSach.href,
-        name: MENU.GioiThieuChinhSach.name,
-        isInternal: MENU.GioiThieuChinhSach.isInternal,
-      },
+      // {
+      //   id: MENU.GioiThieuChinhSach.id,
+      //   href: MENU.GioiThieuChinhSach.href,
+      //   name: MENU.GioiThieuChinhSach.name,
+      //   isInternal: MENU.GioiThieuChinhSach.isInternal,
+      // },
     ],
   },
   {

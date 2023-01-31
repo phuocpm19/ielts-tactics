@@ -9,4 +9,5 @@ export type TArticle = {
   show: boolean;
   authorName: string | null;
   createBy: string | null;
+  mucLucList?: any;
 };

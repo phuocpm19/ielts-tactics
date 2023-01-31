@@ -112,12 +112,12 @@ export default function SliderList(props: ISliderListProps) {
       listData: listWriting,
       pathList: pathListWriting,
     },
-    // {
-    //   number: '6',
-    //   heading: 'Speaking',
-    //   listData: listSpeaking,
-    //   pathList: pathListSpeaking,
-    // },
+    {
+      number: '6',
+      heading: 'Speaking',
+      listData: listSpeaking,
+      pathList: pathListSpeaking,
+    },
   ];
 
   return (
@@ -156,14 +156,14 @@ export default function SliderList(props: ISliderListProps) {
                                       {item.title}
                                     </a>
                                   </div>
-                                  {item.createAt && (
+                                  {/* {item.createAt && (
                                     <div className={styles['Item__post-info-time']}>
                                       <div className={styles['Item__post-info-time-icon']}>
                                         <Icon name={EIconName.ICON_CLOCK} />
                                       </div>
                                       <div>{convertFullDateTime(item.createAt)}</div>
                                     </div>
-                                  )}
+                                  )} */}
                                 </div>
                               </Col>
                             </Row>

@@ -44,8 +44,9 @@ const getPostBySlug = async (collectionName, slug) => {
     show: doc.data().show,
     authorName: doc.data().authorName,
     createBy: doc.data().createBy,
+    mucLucList: doc.data().mucLucList,
   }));
-
+  // console.log('post', post);
   return post;
 };
 
