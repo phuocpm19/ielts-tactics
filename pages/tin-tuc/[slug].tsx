@@ -18,6 +18,7 @@ const TinTucChiTietPage: NextPage<TArticle> = ({
   show,
   authorName,
   createBy,
+  mucLucList,
 }) => {
   return (
     <>
@@ -35,6 +36,7 @@ const TinTucChiTietPage: NextPage<TArticle> = ({
           show={show}
           authorName={authorName}
           createBy={createBy}
+          mucLucList={mucLucList}
         />
       </Layout>
     </>
@@ -55,8 +57,9 @@ export async function getServerSideProps(context: any) {
       thumbnail: post ? post.thumbnail : null,
       slug: post ? post.slug : null,
       show: post ? post.show : null,
-      // authorName: post ? post?.authorName : null,
+      authorName: post ? post?.authorName : null,
       createBy: post ? post.createBy : null,
+      mucLucList: post ? post.mucLucList : null,
     },
   };
 }
