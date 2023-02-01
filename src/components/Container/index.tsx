@@ -8,9 +8,10 @@ import styles from './styles.module.scss';
 export interface IContainerProps {
   children: React.ReactNode;
   isChild?: boolean;
+  mucLucList?: any;
 }
 
-export default function Container({ children, isChild }: IContainerProps) {
+export default function Container({ children, isChild, mucLucList }: IContainerProps) {
   return (
     <div className={styles.wrapper}>
       {!isChild ? (
@@ -21,7 +22,7 @@ export default function Container({ children, isChild }: IContainerProps) {
             {children}
           </Col>
           <Col lg={6}>
-            <SidebarRight />
+            <SidebarRight mucLucList={mucLucList} />
           </Col>
         </Row>
       )}
