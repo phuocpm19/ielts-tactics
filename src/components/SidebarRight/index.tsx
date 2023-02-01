@@ -31,16 +31,18 @@ export default function SidebarRight({ mucLucList }: ISidebarRightProps) {
   return (
     <div className={styles.SidebarRight}>
       {mucLucList && mucLucList?.length > 0 ? (
-        <div className={classNames(styles.SidebarRight__collapse, { [styles.sticky]: headerSticky })}>
+        <div
+          className={classNames(styles.SidebarRight__collapse, styles['SidebarRight__collapse--mucluc'], {
+            [styles.sticky]: headerSticky,
+          })}
+        >
           <Collapse defaultActiveKey={['1']}>
             <Panel header="Mục lục" key="1">
-              {/* <ol> */}
               {mucLucList?.map((item: any) => (
                 <div key={item?.idMucLuc} className={styles.SidebarRight__collapseItem}>
                   <a href={`#${item?.idMucLuc}`}>{item?.tenMucLuc}</a>
                 </div>
               ))}
-              {/* </ol> */}
             </Panel>
           </Collapse>
         </div>
