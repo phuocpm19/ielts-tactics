@@ -25,7 +25,7 @@ export default function PageDetail({
     <div className="padding-common">
       {loading && <Loading />}
 
-      <Container isChild>
+      <Container isChild mucLucList={mucLucList}>
         <Article
           id={id}
           title={title}

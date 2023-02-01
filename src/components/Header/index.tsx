@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Drawer, Input, Menu, MenuProps } from 'antd';
 import { Button as ButtonAntd } from 'antd';
+import classNames from 'classnames';
 
 import { Paths } from '@/helpers/router';
 import styles from './styles.module.scss';
@@ -15,7 +16,6 @@ import { EButtonVariant } from '@/components/Button/enums';
 import SearchModal from '@/components/SearchModal';
 
 import { MENU, navList } from './data';
-import classNames from 'classnames';
 
 export interface IHeaderProps {
   showBanner?: boolean;

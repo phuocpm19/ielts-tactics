@@ -47,19 +47,21 @@ const Article: React.FC<TArticle> = ({
         </div>
 
         <div className={styles['Article__content']}>
-          {mucLucList && mucLucList?.length > 0 ? (
+          {/* {mucLucList && mucLucList?.length > 0 ? (
             <div className={styles['Article__content-catalog']}>
               <Collapse defaultActiveKey={['1']}>
                 <Panel header="Mục lục" key="1">
                   <ol>
                     {mucLucList?.map((item: any) => (
-                      <li key={item?.idMucLuc}>{item?.tenMucLuc}</li>
+                      <li key={item?.idMucLuc}>
+                        <a href={`#${item?.idMucLuc}`}>{item?.tenMucLuc}</a>
+                      </li>
                     ))}
                   </ol>
                 </Panel>
               </Collapse>
             </div>
-          ) : null}
+          ) : null} */}
 
           {content && <div className="CKEditer" dangerouslySetInnerHTML={{ __html: content }}></div>}
 

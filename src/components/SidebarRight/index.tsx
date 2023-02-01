@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Collapse, Input } from 'antd';
 import Link from 'next/link';
+import classNames from 'classnames';
 
 import Icon from '@/components/Icon';
 import { EIconName } from '@/components/Icon/enums';
@@ -8,13 +9,43 @@ import { EIconName } from '@/components/Icon/enums';
 import styles from './styles.module.scss';
 import { courseList, ieltsList, socialList } from './data';
 
-export interface ISidebarRightProps {}
+export interface ISidebarRightProps {
+  mucLucList?: any;
+}
 
 const { Panel } = Collapse;
 
-export default function SidebarRight(props: ISidebarRightProps) {
+export default function SidebarRight({ mucLucList }: ISidebarRightProps) {
+  const [headerSticky, setHeaderSticky] = useState<boolean>(false);
+
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 160) {
+        setHeaderSticky(true);
+      } else {
+        setHeaderSticky(false);
+      }
+    });
+  }, []);
+
   return (
     <div className={styles.SidebarRight}>
+      {mucLucList && mucLucList?.length > 0 ? (
+        <div className={classNames(styles.SidebarRight__collapse, { [styles.sticky]: headerSticky })}>
+          <Collapse defaultActiveKey={['1']}>
+            <Panel header="Mục lục" key="1">
+              {/* <ol> */}
+              {mucLucList?.map((item: any) => (
+                <div key={item?.idMucLuc} className={styles.SidebarRight__collapseItem}>
+                  <a href={`#${item?.idMucLuc}`}>{item?.tenMucLuc}</a>
+                </div>
+              ))}
+              {/* </ol> */}
+            </Panel>
+          </Collapse>
+        </div>
+      ) : null}
+
       <div className={styles.SidebarRight__collapse}>
         <Collapse defaultActiveKey={['1']}>
           <Panel header="Lộ trình Khóa học IELTS" key="1">
