@@ -30,7 +30,7 @@ export default function PostItem({ hrefPost, srcThumbnail, title, desc }: IPostI
               //   </a>
               // </Link>
               <a className="image-common" target="_blank" rel="noopener noreferrer" href={hrefPost}>
-                <img src={srcThumbnail || '/images/thumbnail-default.jpeg'} alt={title} />
+                <img src={srcThumbnail || '/images/thumbnail-default.jpeg'} alt={title || 'ielts-tactics'} />
               </a>
             )}
           </div>
