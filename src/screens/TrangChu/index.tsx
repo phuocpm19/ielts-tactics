@@ -133,12 +133,12 @@ export default function TrangChu() {
             <div className={styles['LoTrinh__header']}>
               <div className={styles['LoTrinh__header-heading']}>LỘ TRÌNH KHÓA HỌC IELTS TACTICS TINH GỌN</div>
               <div className={`${styles['LoTrinh__header-image']} image-common`}>
-                <img src="/images/cam-ket.png" />
+                <img src="/images/cam-ket.png" alt="ielts-tactics-cam-ket" />
               </div>
             </div>
 
             <div className={`${styles['LoTrinh__image']} image-common`}>
-              <img src="/images/lo-trinh-moi.png" />
+              <img src="/images/lo-trinh-moi.png" alt="lo-trinh-moi" />
             </div>
 
             <div className={styles['LoTrinh__detail']}>
@@ -174,7 +174,7 @@ export default function TrangChu() {
               <div className={styles['KhamPha__header-heading']}>
                 <div className={styles['KhamPha__header-heading-text']}>KHÁM PHÁ KHO TÀI LIỆU BÀI GIẢNG IELTS</div>
                 <div className={styles['KhamPha__header-heading-image']}>
-                  <img src="/images/doc-quyen.png" alt="image" />
+                  <img src="/images/doc-quyen.png" alt="doc-quyen" />
                 </div>
               </div>
               <div className={styles['KhamPha__header-subHeading']}>
