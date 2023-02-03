@@ -17,7 +17,7 @@ export const Paths = {
   // KhoaHoc65: '/khoa-hoc/khoa-hoc-ielts-than-toc-muc-tieu-6.5+-ielts-cam-ket-dau-ra',
   // KhoaHoc7075: '/khoa-hoc/khoa-hoc-ielts-than-toc-muc-tieu-7.0-7.5+-ielts-cam-ket-dau-ra',
 
-  TaiLieu: '/tai-lieu',
+  TaiLieu: '/tai-lieu-ielts',
 
   TuhocIeltsOnline: '/tu-hoc-ielts-online',
   TuhocIeltsOnlineGrammar: '/tu-hoc-ielts-online/grammar',
