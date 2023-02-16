@@ -54,7 +54,7 @@ const serviceList = [
     id: 4,
     name: MENU.GioiThieuChinhSach.name,
     href: MENU.GioiThieuChinhSach.href,
-    isInternal: false,
+    isInternal: true,
   },
 ];
 

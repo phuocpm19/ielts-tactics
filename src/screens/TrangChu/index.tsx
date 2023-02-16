@@ -42,16 +42,16 @@ export default function TrangChu() {
 
                 <div className={styles['Banner__info-button']}>
                   <Button variant={EButtonVariant.BLACK_WHITE}>
-                    {/* <Link href={`${Paths.TinTuc}/trung-tam-luyen-thi-ielts-uy-t%C3%ADn-tai-viet-nam-ielts-tactics`}>
+                    <Link href={`${Paths.KhoaHoc}/lo-trình-cac-khoa-hoc-ielts-tactics`}>
                       <a>Tìm hiểu thêm</a>
-                    </Link> */}
-                    <a
+                    </Link>
+                    {/* <a
                       target="_blank"
                       rel="noopener noreferrer"
-                      href={`${Paths.KhoaHoc}/lo-tr%C3%ACnh-cac-khoa-hoc-ielts-tactics`}
+                      href={`${Paths.KhoaHoc}/lo-trình-cac-khoa-hoc-ielts-tactics`}
                     >
                       Tìm hiểu thêm
-                    </a>
+                    </a> */}
                   </Button>
                 </div>
 
@@ -148,17 +148,17 @@ export default function TrangChu() {
                   {LoTrinhList.map((item) => (
                     <Col xs={24} md={8} key={item.id}>
                       <div className={styles['LoTrinh__detail-item']}>
-                        {/* <Link href={item.href}>
+                        <Link href={item.href}>
                           <a className={styles['LoTrinh__detail-item-link']}>{item.title}</a>
-                        </Link> */}
-                        <a
+                        </Link>
+                        {/* <a
                           className={styles['LoTrinh__detail-item-link']}
                           target="_blank"
                           rel="noopener noreferrer"
                           href={item.href}
                         >
                           {item.title}
-                        </a>
+                        </a> */}
                       </div>
                     </Col>
                   ))}

@@ -24,14 +24,14 @@ export default function PostItem({ hrefPost, srcThumbnail, title, desc }: IPostI
             {loading ? (
               <Skeleton.Image />
             ) : (
-              // <Link href={hrefPost}>
-              //   <a className="image-common">
-              //     <img src={srcThumbnail || '/images/thumbnail-default.jpeg'} alt="thumbnail" />
-              //   </a>
-              // </Link>
-              <a className="image-common" target="_blank" rel="noopener noreferrer" href={hrefPost}>
-                <img src={srcThumbnail || '/images/thumbnail-default.jpeg'} alt={title || 'ielts-tactics'} />
-              </a>
+              <Link href={hrefPost}>
+                <a className="image-common">
+                  <img src={srcThumbnail || '/images/thumbnail-default.jpeg'} alt={title || 'ielts-tactics'} />
+                </a>
+              </Link>
+              // <a className="image-common" target="_blank" rel="noopener noreferrer" href={hrefPost}>
+              //   <img src={srcThumbnail || '/images/thumbnail-default.jpeg'} alt={title || 'ielts-tactics'} />
+              // </a>
             )}
           </div>
         </Col>
@@ -40,30 +40,30 @@ export default function PostItem({ hrefPost, srcThumbnail, title, desc }: IPostI
           <Skeleton loading={loading}>
             <div className={styles['PostItem__info']}>
               <div className={styles['PostItem__info-title']}>
-                {/* <Link href={hrefPost}>
+                <Link href={hrefPost}>
                   <a>{title}</a>
-                </Link> */}
-                <a target="_blank" rel="noopener noreferrer" href={hrefPost}>
+                </Link>
+                {/* <a target="_blank" rel="noopener noreferrer" href={hrefPost}>
                   {title}
-                </a>
+                </a> */}
               </div>
 
               <div className={styles['PostItem__info-desc']}>
-                {/* <Link href={hrefPost}>
+                <Link href={hrefPost}>
                   <a>{desc}</a>
-                </Link> */}
-                <a target="_blank" rel="noopener noreferrer" href={hrefPost}>
+                </Link>
+                {/* <a target="_blank" rel="noopener noreferrer" href={hrefPost}>
                   {desc}
-                </a>
+                </a> */}
               </div>
 
               <div className={styles['PostItem__info-link']}>
-                {/* <Link href={hrefPost}>
+                <Link href={hrefPost}>
                   <a>Xem chi tiết</a>
-                </Link> */}
-                <a target="_blank" rel="noopener noreferrer" href={hrefPost}>
+                </Link>
+                {/* <a target="_blank" rel="noopener noreferrer" href={hrefPost}>
                   Xem chi tiết
-                </a>
+                </a> */}
               </div>
             </div>
           </Skeleton>

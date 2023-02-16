@@ -238,9 +238,14 @@ export default function Header({ showBanner }: IHeaderProps) {
               <div className={styles.info}>
                 <div className={styles.infoLeft}>
                   <div className={`${styles.infoLeft__logo} wrapper-logo`}>
-                    <a target="_blank" rel="noopener noreferrer" href={Paths.TrangChu}>
+                    {/* <a target="_blank" rel="noopener noreferrer" href={Paths.TrangChu}>
                       <img src="/images/logo.png" alt="logo" />
-                    </a>
+                    </a> */}
+                    <Link href={Paths.TrangChu}>
+                      <a>
+                        <img src="/images/logo.png" alt="logo" />
+                      </a>
+                    </Link>
                   </div>
 
                   <ConTact />
@@ -268,18 +273,18 @@ export default function Header({ showBanner }: IHeaderProps) {
                   <div className={styles.navItem} key={item.id}>
                     <div className={styles.navItem__menu}>
                       {item.href ? (
-                        // <Link href={item.href}>
-                        //   <a className={styles.navItem__menuName}>{item.name}</a>
-                        // </Link>
-                        <a
-                          className={styles.navItem__menuName}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          href={item.href}
-                        >
-                          {item.name}
-                        </a>
+                        <Link href={item.href}>
+                          <a className={styles.navItem__menuName}>{item.name}</a>
+                        </Link>
                       ) : (
+                        // <a
+                        //   className={styles.navItem__menuName}
+                        //   target="_blank"
+                        //   rel="noopener noreferrer"
+                        //   href={item.href}
+                        // >
+                        //   {item.name}
+                        // </a>
                         <span className={styles.navItem__menuName}>{item.name}</span>
                       )}
 
@@ -295,18 +300,18 @@ export default function Header({ showBanner }: IHeaderProps) {
                         {item.subMenu.map((itemChild) => (
                           <div className={styles.navItem__subMenuItem} key={itemChild.id}>
                             {itemChild.isInternal ? (
-                              // <Link href={itemChild.href}>
-                              //   <a className={styles.navItem__subMenuItemName}>{itemChild.name}</a>
-                              // </Link>
-                              <a
-                                className={styles.navItem__subMenuItemName}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                href={itemChild.href}
-                              >
-                                {itemChild.name}
-                              </a>
+                              <Link href={itemChild.href}>
+                                <a className={styles.navItem__subMenuItemName}>{itemChild.name}</a>
+                              </Link>
                             ) : (
+                              // <a
+                              //   className={styles.navItem__subMenuItemName}
+                              //   target="_blank"
+                              //   rel="noopener noreferrer"
+                              //   href={itemChild.href}
+                              // >
+                              //   {itemChild.name}
+                              // </a>
                               <a
                                 className={styles.navItem__subMenuItemName}
                                 target="_blank"

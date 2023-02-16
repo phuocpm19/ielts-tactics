@@ -11,9 +11,12 @@ import { renderPathArticle } from '@/helpers/functions';
 const IconText = ({ text, categoryName, slug }: any) => {
   return (
     <Space>
-      <a target="_blank" rel="noopener noreferrer" href={`${renderPathArticle(categoryName)}/${slug}`}>
+      {/* <a target="_blank" rel="noopener noreferrer" href={`${renderPathArticle(categoryName)}/${slug}`}>
         <a>{text}</a>
-      </a>
+      </a> */}
+      <Link href={`${renderPathArticle(categoryName)}/${slug}`}>
+        <a>{text}</a>
+      </Link>
     </Space>
   );
 };
@@ -26,7 +29,7 @@ const ListResult = ({ dataSource }: any) => {
         actions={[<IconText text="Xem chi tiết" key="detail" categoryName={item.category} slug={item.slug} />]}
         extra={
           <div className={styles.ThumbnailWrapper}>
-            <a
+            {/* <a
               className="image-common"
               target="_blank"
               rel="noopener noreferrer"
@@ -37,15 +40,28 @@ const ListResult = ({ dataSource }: any) => {
                 alt="logo"
                 src={item.thumbnail ? item.thumbnail : '/images/thumbnail-default.jpeg'}
               />
-            </a>
+            </a> */}
+
+            <Link href={`${renderPathArticle(item.category)}/${item.slug}`}>
+              <a className="image-common">
+                <img
+                  className="img-resize"
+                  alt="logo"
+                  src={item.thumbnail ? item.thumbnail : '/images/thumbnail-default.jpeg'}
+                />
+              </a>
+            </Link>
           </div>
         }
       >
         <List.Item.Meta
           title={
-            <a target="_blank" rel="noopener noreferrer" href={`${renderPathArticle(item.category)}/${item.slug}`}>
-              {item.title}
-            </a>
+            // <a target="_blank" rel="noopener noreferrer" href={`${renderPathArticle(item.category)}/${item.slug}`}>
+            //   {item.title}
+            // </a>
+            <Link href={`${renderPathArticle(item.category)}/${item.slug}`}>
+              <a>{item.title}</a>
+            </Link>
           }
           description={item.desc}
         />
