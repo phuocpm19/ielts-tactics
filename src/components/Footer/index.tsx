@@ -68,17 +68,9 @@ export default function Footer(props: IFooterProps) {
                 {serviceList.map((item) => (
                   <div className={styles.service__item} key={item.id}>
                     {item.isInternal ? (
-                      // <Link href={item.href}>
-                      //   <a className={styles.service__itemName}>{item.name}</a>
-                      // </Link>
-                      <a
-                        className={styles.service__itemName}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href={item.href}
-                      >
-                        {item.name}
-                      </a>
+                      <Link href={item.href}>
+                        <a className={styles.service__itemName}>{item.name}</a>
+                      </Link>
                     ) : (
                       <a href={item.href} target="_blank" rel="noopener noreferrer">
                         {item.name}

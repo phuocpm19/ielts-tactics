@@ -140,22 +140,28 @@ export default function SliderList(props: ISliderListProps) {
                             <Row gutter={16}>
                               <Col span={12}>
                                 <div className={styles['Item__post-thumb']}>
-                                  <a target="_blank" rel="noopener noreferrer" href={`${slider.pathList}/${item.slug}`}>
+                                  {/* <a target="_blank" rel="noopener noreferrer" href={`${slider.pathList}/${item.slug}`}>
                                     <img src={item.thumbnail} alt="ielts-tactics" />
-                                  </a>
+                                  </a> */}
+                                  <Link href={`${slider.pathList}/${item.slug}`}>
+                                    <img src={item.thumbnail} alt="ielts-tactics" />
+                                  </Link>
                                 </div>
                               </Col>
                               <Col span={12}>
                                 <div className={styles['Item__post-info']}>
                                   <div className={styles['Item__post-info-title']}>
-                                    <a
+                                    {/* <a
                                       target="_blank"
                                       rel="noopener noreferrer"
                                       href={`${slider.pathList}/${item.slug}`}
                                     >
                                       {item.title}
-                                    </a>
+                                    </a> */}
+
+                                    <Link href={`${slider.pathList}/${item.slug}`}>{item.title}</Link>
                                   </div>
+
                                   {/* {item.createAt && (
                                     <div className={styles['Item__post-info-time']}>
                                       <div className={styles['Item__post-info-time-icon']}>
@@ -173,12 +179,12 @@ export default function SliderList(props: ISliderListProps) {
 
                       <div className={styles['Item__footer']}>
                         <Button variant={EButtonVariant.WHITE} type={EButtonType.DEFAULT} fullWidth>
-                          {/* <Link href={slider.pathList}>
+                          <Link href={slider.pathList}>
                             <a>Xem tất cả</a>
-                          </Link> */}
-                          <a className="aaa" target="_blank" rel="noopener noreferrer" href={slider.pathList}>
+                          </Link>
+                          {/* <a className="aaa" target="_blank" rel="noopener noreferrer" href={slider.pathList}>
                             Xem tất cả
-                          </a>
+                          </a> */}
                         </Button>
                       </div>
                     </div>

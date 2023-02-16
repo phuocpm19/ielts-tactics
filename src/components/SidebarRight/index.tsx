@@ -54,12 +54,12 @@ export default function SidebarRight({ mucLucList }: ISidebarRightProps) {
             <div className={styles.SidebarRight__collapseList}>
               {courseList.map((item) => (
                 <div className={styles.SidebarRight__collapseItem} key={item.id}>
-                  {/* <Link href={item.href}>
+                  <Link href={item.href}>
                     <a>{item.name}</a>
-                  </Link> */}
-                  <a target="_blank" rel="noopener noreferrer" href={item.href}>
+                  </Link>
+                  {/* <a target="_blank" rel="noopener noreferrer" href={item.href}>
                     {item.name}
-                  </a>
+                  </a> */}
                 </div>
               ))}
               <div></div>
@@ -74,12 +74,12 @@ export default function SidebarRight({ mucLucList }: ISidebarRightProps) {
             <div className={styles.SidebarRight__collapseList}>
               {ieltsList.map((item) => (
                 <div className={styles.SidebarRight__collapseItem} key={item.id}>
-                  {/* <Link href={item.href}>
+                  <Link href={item.href}>
                     <a>{item.name}</a>
-                  </Link> */}
-                  <a target="_blank" rel="noopener noreferrer" href={item.href}>
+                  </Link>
+                  {/* <a target="_blank" rel="noopener noreferrer" href={item.href}>
                     {item.name}
-                  </a>
+                  </a> */}
                 </div>
               ))}
               <div></div>
