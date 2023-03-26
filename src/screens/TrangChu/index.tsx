@@ -19,6 +19,21 @@ import { LoTrinhList, TaiSaoList } from './data';
 export default function TrangChu() {
   const loading = useFakeLoading(1000);
 
+  const listTuHoc = [
+    { id: 1, title: 'IELTS Listening', src: Paths.TuhocIeltsOnlineListening, isInternal: true },
+    { id: 2, title: 'IELTS Speaking', src: Paths.TuhocIeltsOnlineSpeaking, isInternal: true },
+    { id: 3, title: 'IELTS Reading', src: Paths.TuhocIeltsOnlineReading, isInternal: true },
+    { id: 4, title: 'IELTS Writing', src: Paths.TuhocIeltsOnlineWriting, isInternal: true },
+    { id: 5, title: 'IELTS Grammar', src: Paths.TuhocIeltsOnlineGrammar, isInternal: true },
+    { id: 6, title: 'IELTS Vocabulary', src: Paths.TuhocIeltsOnlineVocabulary, isInternal: true },
+    {
+      id: 7,
+      title: 'IELTS Online Test',
+      src: 'https://docs.google.com/forms/d/e/1FAIpQLSf2G9LdAEHOZChMzEJqS0GmHUqBs5xgsEvAZVCcqidYyvvaYQ/viewform',
+      isInternal: false,
+    },
+  ];
+
   return (
     <>
       {loading && <Loading />}
@@ -61,7 +76,75 @@ export default function TrangChu() {
           </Container>
         </div>
 
-        <div className={styles['TaiSao']}>
+        <Container>
+          <div className={styles['TuHoc']}>
+            <div className={styles['TuHoc__header']}>
+              <div className={styles['TuHoc__header-heading']}>Lộ trình tự học IELTS chất lượng cho bạn</div>
+              <div className={styles['TuHoc__header-sub-heading']}>
+                Tỏ tường mọi &quot;đường đi nước bước&quot; để chinh phục 7.0+ IELTS ngay nào!
+              </div>
+            </div>
+
+            <div className={styles['TuHoc__body']}>
+              <Row>
+                <Col span={16}>
+                  <div className={styles['TuHoc__video']}>
+                    <a
+                      className={styles['TuHoc__video-thumb']}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href="https://www.youtube.com/watch?v=_Ltc3vmBKtw&t=4s"
+                    >
+                      <img src="/images/video-thumb.jpg" alt="image" />
+                    </a>
+                  </div>
+                </Col>
+
+                <Col span={8} className={styles['TuHoc__info-wrapper']}>
+                  <div className={styles['TuHoc__info']}>
+                    <div className={styles['TuHoc__info-heading']}>
+                      Lộ trình tự học IELTS <br />
+                      cho người mới bắt đầu <br />
+                      từ 0 - 7.0 IELTS
+                    </div>
+                    <span className={styles['TuHoc__info-tag']}>MIỄN PHÍ</span>
+                    <div className={styles['TuHoc__info-title']}>Tài liệu & Chuỗi Bài giảng online</div>
+                    <div className={styles['TuHoc__info-desc']}>
+                      Hy vọng sau video này của IELTS Tactics, bạn có thể tự tin bắt tay vào kế hoạch hành động nha!
+                    </div>
+                    <div className={styles['TuHoc__info-btn']}>
+                      <Button variant={EButtonVariant.YELLOW_BLACK}>
+                        <Link href={Paths.TaiLieu}>
+                          <a>Tải tài liệu</a>
+                        </Link>
+                      </Button>
+                    </div>
+                  </div>
+                </Col>
+              </Row>
+
+              <div className="TuHoc__list">
+                <Row gutter={16}>
+                  {listTuHoc.map((item) => (
+                    <Col span={6} key={item.id} className={styles['TuHoc__item-wrapper']}>
+                      {!item.isInternal ? (
+                        <Link href={item.src}>
+                          <a className={styles['TuHoc__item']}>{item.title}</a>
+                        </Link>
+                      ) : (
+                        <a className={styles['TuHoc__item']} target="_blank" rel="noopener noreferrer" href={item.src}>
+                          {item.title}
+                        </a>
+                      )}
+                    </Col>
+                  ))}
+                </Row>
+              </div>
+            </div>
+          </div>
+        </Container>
+
+        {/* <div className={styles['TaiSao']}>
           <Container>
             <div className={styles['TaiSao__header']}>
               <div className={styles['TaiSao__heading']}>TẠI SAO CON CẦN CÓ 1 CHỨNG CHỈ IELTS?</div>
@@ -85,7 +168,7 @@ export default function TrangChu() {
               </Row>
             </div>
           </Container>
-        </div>
+        </div> */}
 
         <div className={styles['ThiThu__wrapper']}>
           <Container>
@@ -124,6 +207,26 @@ export default function TrangChu() {
                   </a>
                 </Button>
               </div>
+            </div>
+          </Container>
+        </div>
+
+        <div className={styles['KhamPha']}>
+          <Container>
+            <div className={styles['KhamPha__header']}>
+              <div className={styles['KhamPha__header-heading']}>
+                <div className={styles['KhamPha__header-heading-text']}>KHÁM PHÁ KHO TÀI LIỆU BÀI GIẢNG IELTS</div>
+                <div className={styles['KhamPha__header-heading-image']}>
+                  <img src="/images/doc-quyen.png" alt="doc-quyen" />
+                </div>
+              </div>
+              <div className={styles['KhamPha__header-subHeading']}>
+                Chất lượng - Chi tiết - Update 24h bởi đội ngũ chuyên gia học thuật giàu kinh nghiệm!
+              </div>
+            </div>
+
+            <div className={styles['KhamPha__body']}>
+              <SliderList />
             </div>
           </Container>
         </div>
@@ -168,25 +271,13 @@ export default function TrangChu() {
           </Container>
         </div>
 
-        <div className={styles['KhamPha']}>
-          <Container>
-            <div className={styles['KhamPha__header']}>
-              <div className={styles['KhamPha__header-heading']}>
-                <div className={styles['KhamPha__header-heading-text']}>KHÁM PHÁ KHO TÀI LIỆU BÀI GIẢNG IELTS</div>
-                <div className={styles['KhamPha__header-heading-image']}>
-                  <img src="/images/doc-quyen.png" alt="doc-quyen" />
-                </div>
-              </div>
-              <div className={styles['KhamPha__header-subHeading']}>
-                Chất lượng - Chi tiết - Update 24h bởi đội ngũ chuyên gia học thuật giàu kinh nghiệm!
-              </div>
-            </div>
-
-            <div className={styles['KhamPha__body']}>
-              <SliderList />
-            </div>
-          </Container>
-        </div>
+        {/* <div className={styles['GiaoVien']}>
+          <div className={styles['GiaoVien__header']}>
+            <div className={styles['GiaoVien__header-heading']}></div>
+            <div className={styles['GiaoVien__header-sub-heading']}></div>
+          </div>
+          <div className={styles['GiaoVien__body']}></div>
+        </div> */}
       </div>
     </>
   );

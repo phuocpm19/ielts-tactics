@@ -16,7 +16,7 @@ export const CATEGORY_NAME = {
   HOAT_DONG_NOI_BO: 'hoat-dong-noi-bo',
 };
 
-export const TITLE_DEFAULT = 'IELTS Tactics - Học Online miễn phí - Luyện Thi Tiếng Anh Toàn Diện';
+export const TITLE_DEFAULT = 'Luyện thi IELTS Online miễn phí, tự học IELTS A-Z | IELTS Tactics';
 export const THUMBNAIL_DEFAULT =
   'https://firebasestorage.googleapis.com/v0/b/ielts-tactics-2.appspot.com/o/postImages%2Fthumbnail%20website%20ielts%20tactics%201.jpg?alt=media&token=fc9ecc93-d48b-4642-8441-734ab6871357';
 export const KEYWORDS_DEFAULT =
