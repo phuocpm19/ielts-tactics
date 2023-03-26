@@ -224,7 +224,7 @@ export default function Header({ showBanner }: IHeaderProps) {
           {bannerVisible && showBanner && (
             <div className={styles.banner}>
               <a className="image-common" target="_blank" rel="noopener noreferrer" href={Paths.BannerTop}>
-                <img src="/images/banner-t10.jpeg" alt="banner" />
+                <img src="/images/banner-t3.jpg" alt="banner" />
               </a>
 
               <div className={`${styles.banner__icon} icon-common`} onClick={closeBanner}>

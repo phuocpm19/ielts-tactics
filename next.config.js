@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   i18n: {
-    locales: ['vi', 'en', 'sr', 'es', 'pseudo'],
+    locales: ['vi', 'sr', 'es', 'pseudo'],
     defaultLocale: 'vi'
   }
 };

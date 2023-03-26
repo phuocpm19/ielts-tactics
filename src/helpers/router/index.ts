@@ -12,7 +12,7 @@ export const Paths = {
   KhoaHoc: '/khoa-hoc',
   KhoaHoc55: '/khoa-hoc/khoa-hoc-ielts-5-5',
   KhoaHoc65: '/khoa-hoc/khoa-hoc-ielts-6-5',
-  KhoaHoc7075: '/khoa-hoc/khoa-hoc-ielts-7-0',
+  KhoaHoc7075: '/khoa-hoc/khoa-hoc-ielts-7-0-7-5',
   // KhoaHoc55: '/khoa-hoc/khoa-hoc-ielts-than-toc-muc-tieu-5.5+-ielts-cam-ket-dau-ra',
   // KhoaHoc65: '/khoa-hoc/khoa-hoc-ielts-than-toc-muc-tieu-6.5+-ielts-cam-ket-dau-ra',
   // KhoaHoc7075: '/khoa-hoc/khoa-hoc-ielts-than-toc-muc-tieu-7.0-7.5+-ielts-cam-ket-dau-ra',
