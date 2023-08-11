@@ -55,7 +55,7 @@ class MyDocument extends Document {
           {/* < End Google Tag Manager  */}
 
           {/* Meta Pixel Code  */}
-          <script
+         {/* <script
             dangerouslySetInnerHTML={{
               __html: `!function (f, b, e, v, n, t, s) {
       if (f.fbq) return; n = f.fbq = function () {
@@ -80,7 +80,7 @@ class MyDocument extends Document {
               width="1"
               style={{ display: 'none' }}
             />
-          </noscript>
+          </noscript> */}
           {/* End Meta Pixel Code  */}
         </Head>
 
